@@ -68,6 +68,10 @@ public class UserController {
         return "redirect:/loginReg";
     }
 
+    @GetMapping("/dashboard")
+    public String dashboard(){
+        return "dashboard.jsp";
+    }
 }
 
 
