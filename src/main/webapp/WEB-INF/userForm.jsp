@@ -24,7 +24,8 @@
 </head>
 <body>
     <!-- Enter body here -->
-    <div class="login-reg-main border-round give-me-space-up-down">
+    <div class="login-reg-main border-round give-me-space-up-down mx-5">
+        <img src="/images/peppermint.png" alt="logo" class="w-25">
         <h3>Register:</h3>
         <form:form action="/register" method="post" modelAttribute="newUser">
             <div class="form-group">
@@ -47,13 +48,13 @@
                 <form:password path="confirm" class="form-control" />
                 <form:errors path="confirm" class="text-danger" />
             </div>
-            <input type="submit" value="Register" class="btn btn-primary" />
+            <input type="submit" value="Register" class="btn" />
         </form:form>
     </div>
 
     <!-- LOGIN -->
     <!-- newLogin object will touch the model to validate only -->
-    <div class="login-reg-main border-round">
+    <div class="login-reg-main border-round mx-5">
         <h3>Login:</h3>
         <form:form action="/login" method="post" modelAttribute="newLogin">
             <div class="form-group">
@@ -66,7 +67,7 @@
                 <form:password path="password" class="form-control" />
                 <form:errors path="password" class="text-danger" />
             </div>
-            <input type="submit" value="Login" class="btn btn-success" />
+            <input type="submit" value="Login" class="btn" />
         </form:form>
     </div>
 
