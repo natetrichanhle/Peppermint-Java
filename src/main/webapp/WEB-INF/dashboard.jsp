@@ -24,9 +24,42 @@
 </head>
 <body>
     <!-- Enter body here -->
-    <div class="navbar mx-5">    
+    <div class="navbar logo">    
         <img src="/images/peppermint.png" alt="logo" class="w-25">
     </div>
-    <h1 class="mx-5">Welcome to the Dashboard</h1>
+    <div class="container d-flex">
+        <div class="accounts-container">
+            <div class="accounts">
+                <div class="d-flex justify-content-center">
+                    <h1 class="dash-h1 col-sm-6 col-md-8 account-h1">Accounts</h1>
+                    <a href="/accounts/new" class="col-6 col-md-4">
+                        <img src="/images/addbutton.png" alt="addbutton" class="addbtn accountbtn">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="gi-container">
+            <div class="goals">
+                <h1 class="dash-h1 col-sm-6 col-md-8">Goals</h1>
+                <a href="/goals/new" class="col-6 col-md-4">
+                    <img src="/images/addbutton.png" alt="addbutton" class="addbtn">
+                </a>
+            </div>
+            <div class="investments">
+                <h1 class="dash-h1">Investments</h1>
+                <a href="/investments/new">
+                    <img src="/images/addbutton.png" alt="addbutton" class="addbtn">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class ="container">
+        <div class="budget-container">
+            <h1 class="dash-h1">Spending & Budgeting</h1>
+            <a href="/budgets/new">
+                <img src="/images/addbutton.png" alt="addbutton" class="addbtn">
+            </a>
+        </div>
+    </div>
 </body>
 </html>

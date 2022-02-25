@@ -4,6 +4,7 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+/* Welcome Page */
 .btn {
     background-color: #9e1a2c;
     color:white;
@@ -40,4 +41,68 @@
 
 .goaldesc{
     font-size: 25px;
+}
+
+/* Dashboard page */
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.accounts-container{
+    background-color: #3c3c3c;
+    flex:3;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+}
+
+.gi-container{
+    flex:5;
+    margin-left: 50px;
+}
+
+.budget-container{
+    height:350px;
+    margin: 50px 0px;
+    background-color: #3c3c3c;
+    display: flex;
+    justify-content: center;
+}
+
+.goals{
+    background-color: #9e1a2c;
+    height:325px;
+    display: flex;
+    justify-content: center;
+}
+
+.investments{
+    background-color: #9e1a2c;
+    height:325px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.dash-h1{
+    margin-top: 15px;
+}
+
+.addbtn{
+    height:35px;
+    margin-top: 22px;
+}
+
+.accounts{
+    width: 399.75px;
+}
+
+.accountbtn{
+    margin-left: 5px;
+}
+
+.account-h1{
+    margin-left: 215px;
 }
