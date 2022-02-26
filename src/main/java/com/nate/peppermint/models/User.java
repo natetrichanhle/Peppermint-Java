@@ -2,16 +2,20 @@ package com.nate.peppermint.models;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -36,6 +40,14 @@ public class User {
     @NotEmpty(message = "Password is required!")
     @Size(min = 8, max = 128, message = "Password must be between 8 and 128 characters")
     private String password;
+
+    @NotEmpty
+    @Min(13920)
+    private int annualIncome;
+
+    @OneToOne(mappedBy="user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    private SavingsAccount savingsAccount;
+
 
     @Transient
     @NotEmpty(message = "Confirm Password is required!")
