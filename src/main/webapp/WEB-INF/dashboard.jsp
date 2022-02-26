@@ -40,25 +40,31 @@
         </div>
         <div class="gi-container">
             <div class="goals">
-                <h1 class="dash-h1 col-sm-6 col-md-8">Goals</h1>
-                <a href="/goals/new" class="col-6 col-md-4">
-                    <img src="/images/addbutton.png" alt="addbutton" class="addbtn">
-                </a>
+                <div class="d-flex justify-content-center">
+                    <h1 class="dash-h1 col-sm-6 col-md-8 goal-h1">Goals</h1>
+                    <a href="/goals/new" class="col-6 col-md-4">
+                        <img src="/images/addbutton.png" alt="addbutton" class="addbtn goalbtn">
+                    </a>
+                </div>
             </div>
             <div class="investments">
-                <h1 class="dash-h1">Investments</h1>
-                <a href="/investments/new">
-                    <img src="/images/addbutton.png" alt="addbutton" class="addbtn">
-                </a>
+                <div class="d-flex justify-content-center">
+                    <h1 class="dash-h1 invest-h1">Investments</h1>
+                    <a href="/investments/new">
+                        <img src="/images/addbutton.png" alt="addbutton" class="addbtn investbtn">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
     <div class ="container">
         <div class="budget-container">
-            <h1 class="dash-h1">Spending & Budgeting</h1>
-            <a href="/budgets/new">
-                <img src="/images/addbutton.png" alt="addbutton" class="addbtn">
-            </a>
+            <div class="d-flex justify-content-center">
+                <h1 class="dash-h1 budget-h1">Spending & Budgeting</h1>
+                <a href="/budgets/new">
+                    <img src="/images/addbutton.png" alt="addbutton" class="addbtn budgetbtn">
+                </a>
+            </div>
         </div>
     </div>
 </body>

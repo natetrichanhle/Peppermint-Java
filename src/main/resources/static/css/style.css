@@ -67,23 +67,17 @@
     height:350px;
     margin: 50px 0px;
     background-color: #3c3c3c;
-    display: flex;
-    justify-content: center;
 }
 
 .goals{
     background-color: #9e1a2c;
     height:325px;
-    display: flex;
-    justify-content: center;
 }
 
 .investments{
     background-color: #9e1a2c;
     height:325px;
     margin-top: 50px;
-    display: flex;
-    justify-content: center;
 }
 
 .dash-h1{
@@ -105,4 +99,28 @@
 
 .account-h1{
     margin-left: 215px;
+}
+
+.goal-h1{
+    padding-left: 345px;
+}
+
+.goalbtn{
+    padding-left: 200px;
+}
+
+.investbtn{
+    padding-left: 225px;
+}
+
+.invest-h1{
+    padding-left: 260px;
+}
+
+.budget-h1{
+    padding-left: 420px;
+}
+
+.budgetbtn{
+    padding-left: 400px;
 }

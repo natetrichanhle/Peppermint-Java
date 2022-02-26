@@ -34,6 +34,11 @@
                 <form:errors path="name" class="text-danger" />
             </div>
             <div class="form-group">
+                <label>Annual Income:</label>
+                <form:input path="annualIncome" class="form-control" />
+                <form:errors path="annualIncome" class="text-danger" />
+            </div>
+            <div class="form-group">
                 <label>Email:</label>
                 <form:input path="email" class="form-control" />
                 <form:errors path="email" class="text-danger" />
