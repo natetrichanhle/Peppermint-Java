@@ -32,9 +32,9 @@
             <div class="accounts">
                 <div class="d-flex justify-content-center">
                     <h1 class="dash-h1 col-sm-6 col-md-8 account-h1">Accounts</h1>
-                    <a href="/accounts/new" class="col-6 col-md-4">
+                    <!-- <a href="/accounts/new" class="col-6 col-md-4">
                         <img src="/images/addbutton.png" alt="addbutton" class="addbtn accountbtn">
-                    </a>
+                    </a> -->
                 </div>
             </div>
         </div>
