@@ -60,4 +60,14 @@ public class PeppermintController {
     public String goals(){
         return "goalForm.jsp";
     }
+
+    @GetMapping("/investments/new")
+    public String investments(){
+        return "investmentForm.jsp";
+    }
+
+    @GetMapping("/budgets/new")
+    public String budgets(){
+        return "budgetForm.jsp";
+    }
 }

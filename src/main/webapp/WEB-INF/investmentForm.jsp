@@ -11,7 +11,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Add Your Goals</title>
+    <title>Insert Title Here</title>
     <!-- for Bootstrap CSS -->
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
     <!-- YOUR own local CSS -->
@@ -25,8 +25,7 @@
 <body>
     <!-- Enter body here -->
     <div class="container">    
-        <h1>Add to your Goals</h1>
+        <h1>Add to your Investments</h1>
     </div>
 </body>
 </html>
-
