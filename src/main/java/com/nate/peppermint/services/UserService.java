@@ -46,13 +46,13 @@ public class UserService {
         Optional<User> potentialUser = userRepository.findByEmail(newLoginObject.getEmail());
         // Reject if NOT present
         if(!potentialUser.isPresent()){
-            result.rejectValue("email", "somethingEmail", "Email is invalid");
+            result.rejectValue("email", "somethingEmail", "Invalid Login");
             return null;
         } 
         User user = potentialUser.get();
         // Reject if BCrypt password match fails
         if(!BCrypt.checkpw(newLoginObject.getPassword(), user.getPassword())){
-            result.rejectValue("password", "somethingpass", "Password is invalid");
+            result.rejectValue("email", "somethingpass", "Invalid Login");
         }
         // Return null if result has errors
         if(result.hasErrors()){

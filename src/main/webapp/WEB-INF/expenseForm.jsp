@@ -27,7 +27,7 @@
     <div class="login-reg-main border-round give-me-space-up-down mx-5">
         <img src="/images/peppermint.png" alt="logo" class="w-25">
         <h3>Register:</h3>
-        <form:form action="/register" method="post" modelAttribute="newUser">
+        <form:form action="/register" method="post" modelAttribute="expense">
             <div class="form-group">
                 <label>Expense Name:</label>
                 <form:input path="expenseName" class="form-control" />
@@ -37,9 +37,6 @@
                 <label>Amount:</label>
                 <form:input path="amount" class="form-control" />
                 <form:errors path="amount" class="text-danger" />
-            </div>
-            <div class="form-group">
-                <form:input type="hidden" path="amount" class="form-control" />
             </div>
             <input type="submit" value="Register" class="btn" />
         </form:form>

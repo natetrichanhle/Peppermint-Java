@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
                 <label>Annual Income:</label>
-                <form:input path="annualIncome" class="form-control" />
+                <form:input type="number" min="13920" path="annualIncome" class="form-control" />
                 <form:errors path="annualIncome" class="text-danger" />
             </div>
             <div class="form-group">
