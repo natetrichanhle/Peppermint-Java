@@ -1,5 +1,7 @@
 package com.nate.peppermint.controllers;
 
+import java.lang.ProcessBuilder.Redirect;
+
 import javax.servlet.http.HttpSession;
 
 import com.nate.peppermint.models.User;
@@ -52,5 +54,10 @@ public class PeppermintController {
             model.addAttribute("loggedInUser", loggedInUser);
             return "editInvestments.jsp";
         }
+    }
+
+    @GetMapping("/goals/new")
+    public String goals(){
+        return "goalForm.jsp";
     }
 }

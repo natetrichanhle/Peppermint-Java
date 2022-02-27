@@ -24,16 +24,8 @@
 </head>
 <body>
     <!-- Enter body here -->
-    <div class="container mx-auto p-5">    
-        <h1>Add a new goal to save for</h1>
-        <form:form action="/goal" method="post" modelAttribute="goal">
-            <div class="form-group">
-                <label>Goal:</label>
-                <form:input path="goal" class="form-control" />
-                <form:errors path="goal" class="text-danger" />
-            </div>
-            <input type="submit" value="goal" class="btn" />
-        </form:form>
+    <div class="container">    
+        <h1>Add a New Goal</h1>
     </div>
 </body>
 </html>
