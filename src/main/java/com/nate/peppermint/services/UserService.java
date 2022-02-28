@@ -17,6 +17,9 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
     
+    @Autowired
+    private MonthService monthService;
+    
     // TO-DO: Write register and login methods!
     public User register(User newUser, BindingResult result) {
         // TO-DO - Reject values or register if no errors:
@@ -36,9 +39,25 @@ public class UserService {
             // Hash and set password, save user to database
             String hashed = BCrypt.hashpw(newUser.getPassword(), BCrypt.gensalt());
             newUser.setPassword(hashed);
-            return userRepository.save(newUser);
+            User newUserTemp = userRepository.save(newUser);
+
+            for (int i = 1; i <= 12; i++){
+                System.out.println(i);
+                Month newMonth = monthService.createMonth(new Month(), i);
+                System.out.println(newMonth);
+                newMonth.setMonthlyTotal(2000);
+                newMonth.setInvestmentPercentage(30);
+                newMonth.setSavingsPercentage(50);
+                newMonth.setUtilityPercentage(20);
+                // newUserTemp.getMonths().add(newMonth);
+                newMonth.setUser(newUserTemp);
+                monthService.updateMonth(newMonth);
+                
+            }
+            
+            return newUserTemp;
+        
         }
-    }
     public User login(LoginUser newLoginObject, BindingResult result) {
          // TO-DO - Reject values:
         
