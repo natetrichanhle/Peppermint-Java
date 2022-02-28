@@ -26,30 +26,54 @@
     <!-- Enter body here -->
     <div class="container">    
         <h1>Add to your Investments</h1>
-        <form:form action="/investments/submit" method="POST" modelAttribute="investment">
-            <div class="mb-3">
-                <form:label path="rothIraAmount" for="formInput" class="form-label">Roth IRA:
-                </form:label>
-                <form:input type="text" class="form-control" id="formInput" path="rothIraAmount" placeholder="" />
-                <form:errors path="rothIraAmount" class="text-danger" />
+        <div class="range align-items-center">
+            <div class="sliderValue">
+                <span>100</span>
             </div>
-            <div class="mb-3">
-                <form:label path="stocksAmount" for="formInput" class="form-label">Stocks:
-                </form:label>
-                <form:input type="text" class="form-control" id="formInput" path="stocksAmount" placeholder="" />
-                <form:errors path="stocksAmount" class="text-danger" />
+            <label>Roth IRA:</label>
+            <div class="field">
+                <div class="value left">0</div>
+                <input type="range" min="0" max="100" steps="1">
+                <div class="value right">100</div>
             </div>
-            <div class="mb-3">
-                <form:label path="cryptoAmount" for="formInput" class="form-label">Crypto:
-                </form:label>
-                <form:input type="text" class="form-control" id="formInput" path="cryptoAmount" placeholder="" />
-                <form:errors path="cryptoAmount" class="text-danger" />
+        </div>
+        <div class="range align-items-center">
+            <div class="sliderValue">
+                <span>100</span>
             </div>
-            <div class="d-flex justify-content-end">
-                <a href = "/dashboard" class="btn mx-5">Cancel</a>
-                <input type="submit" value="Submit" class="btn submit-btn">
+            <label>Stocks:</label>
+            <div class="field">
+                <div class="value left">0</div>
+                <input type="range" min="0" max="100" steps="1">
+                <div class="value right">100</div>
             </div>
-        </form:form>
+        </div>
+        <div class="range align-items-center">
+            <div class="sliderValue">
+                <span>100</span>
+            </div>
+            <label>Crypto:</label>
+            <div class="field">
+                <div class="value left">0</div>
+                <input type="range" min="0" max="100" steps="1">
+                <div class="value right">100</div>
+            </div>
+        </div>
+        
+        <!-- Slider JS -->
+        <script>
+            const slideValue = document.querySelector("span");
+            const inputSlider = document.querySelector("input");
+            inputSlider.oninput = (() => {
+                let value = inputSlider.value;
+                slideValue.textContent = value;
+                slideValue.style.left = (value/2) + "%";
+                slideValue.classList.add("show");
+            });
+            inputSlider.onblur=(() => {
+                slideValue.classList.remove("show");
+            });
+        </script>
     </div>
 </body>
 </html>
