@@ -11,7 +11,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Add Your Goals</title>
+    <title>Goals</title>
     <!-- for Bootstrap CSS -->
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
     <!-- YOUR own local CSS -->
@@ -26,7 +26,7 @@
     <!-- Enter body here -->
     <div class="container">    
         <h1>Add to your Goals</h1>
-        <form:form action="/goals/submit" method="post" modelAttribute="goal">
+        <form:form action="/goals/submit" method="POST" modelAttribute="goal">
             <div class="mb-3">
                 <form:label path="description" for="formInput" class="form-label">Description:
                 </form:label>
@@ -34,7 +34,7 @@
                 <form:errors path="description" class="text-danger" />
             </div>
             <div class="d-flex justify-content-end">
-                <a href = "/dashboard">Cancel</a>
+                <a href = "/dashboard" class="btn mx-5">Cancel</a>
                 <input type="submit" value="Submit" class="btn submit-btn">
             </div>
         </form:form>

@@ -11,7 +11,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>New Budgets</title>
+    <title>Budgets</title>
     <!-- for Bootstrap CSS -->
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
     <!-- YOUR own local CSS -->
@@ -26,6 +26,24 @@
     <!-- Enter body here -->
     <div class="container">    
         <h1>Add to your Budgets</h1>
+        <form:form action="/budgets/submit" method="POST" modelAttribute="budget">
+            <div class="mb-3">
+                <form:label path="category" for="formInput" class="form-label">What are you budgeting for?:
+                </form:label>
+                <form:input type="text" class="form-control" id="formInput" path="category" placeholder="" />
+                <form:errors path="category" class="text-danger" />
+            </div>
+            <div class="mb-3">
+                <form:label path="amount" for="formInput" class="form-label">Amount:
+                </form:label>
+                <form:input type="text" class="form-control" id="formInput" path="amount" placeholder="" />
+                <form:errors path="amount" class="text-danger" />
+            </div>
+            <div class="d-flex justify-content-end">
+                <a href = "/dashboard" class="btn mx-5">Cancel</a>
+                <input type="submit" value="Submit" class="btn submit-btn">
+            </div>
+        </form:form>
     </div>
 </body>
 </html>

@@ -43,6 +43,22 @@
     font-size: 25px;
 }
 
+.goalList{
+    font-size: 20px;
+}
+
+.budgetTable{
+    font-size: 25px;
+}
+
+.spend-container{
+    width: 648px;
+}
+
+.saving-container{
+    width: 648px;
+}
+
 /* Dashboard page */
 
 .logo{

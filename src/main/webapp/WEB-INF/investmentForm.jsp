@@ -11,7 +11,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Insert Title Here</title>
+    <title>Investments</title>
     <!-- for Bootstrap CSS -->
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
     <!-- YOUR own local CSS -->
@@ -26,6 +26,30 @@
     <!-- Enter body here -->
     <div class="container">    
         <h1>Add to your Investments</h1>
+        <form:form action="/investments/submit" method="POST" modelAttribute="investment">
+            <div class="mb-3">
+                <form:label path="rothIraAmount" for="formInput" class="form-label">Roth IRA:
+                </form:label>
+                <form:input type="text" class="form-control" id="formInput" path="rothIraAmount" placeholder="" />
+                <form:errors path="rothIraAmount" class="text-danger" />
+            </div>
+            <div class="mb-3">
+                <form:label path="stocksAmount" for="formInput" class="form-label">Stocks:
+                </form:label>
+                <form:input type="text" class="form-control" id="formInput" path="stocksAmount" placeholder="" />
+                <form:errors path="stocksAmount" class="text-danger" />
+            </div>
+            <div class="mb-3">
+                <form:label path="cryptoAmount" for="formInput" class="form-label">Crypto:
+                </form:label>
+                <form:input type="text" class="form-control" id="formInput" path="cryptoAmount" placeholder="" />
+                <form:errors path="cryptoAmount" class="text-danger" />
+            </div>
+            <div class="d-flex justify-content-end">
+                <a href = "/dashboard" class="btn mx-5">Cancel</a>
+                <input type="submit" value="Submit" class="btn submit-btn">
+            </div>
+        </form:form>
     </div>
 </body>
 </html>

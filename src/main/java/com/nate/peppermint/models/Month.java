@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -41,7 +42,10 @@ public class Month {
     private Integer utilityPercentage;
 
     @OneToMany(mappedBy="month",  cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    private List<Goal> goals;
+    private List<Investment> goals;
+
+    @OneToOne(mappedBy="month", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    private Investment investment;
 
     @Column(updatable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -109,6 +113,37 @@ public class Month {
         this.utilityPercentage = utilityPercentage;
     }
 
+    public List<Investment> getInvestments() {
+        return goals;
+    }
+
+    public void setInvestments(List<Investment> goals) {
+        this.goals = goals;
+    }
+
+    public Investment getInvestment() {
+        return investment;
+    }
+
+    public void setInvestment(Investment investment) {
+        this.investment = investment;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 
     
 }

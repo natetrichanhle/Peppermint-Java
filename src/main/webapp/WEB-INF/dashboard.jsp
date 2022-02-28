@@ -46,6 +46,17 @@
                         <img src="/images/addbutton.png" alt="addbutton" class="addbtn goalbtn">
                     </a>
                 </div>
+                <div class="mx-5">
+                    <table>
+                    <c:forEach var="goal" items="${goalsList}">
+                        <tr>
+                            <td class="goalList">
+                                <c:out value="${goal.description}"/>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    </table>
+                </div>
             </div>
             <div class="investments">
                 <div class="d-flex justify-content-center">
@@ -53,6 +64,28 @@
                     <a href="/investments/new">
                         <img src="/images/addbutton.png" alt="addbutton" class="addbtn investbtn">
                     </a>
+                </div>
+                <div class="mx-5">
+                    <table class="table table-borderless">
+                        <tr>
+                            <th>Roth IRA</th>
+                            <th>Stocks</th>
+                            <th>Crypto</th>
+                        </tr>
+                        <c:forEach var="investment" items="${investmentsList}">
+                        <tr>
+                            <td>
+                                <c:out value="${investment.rothIraAmount}"/>
+                            </td>
+                            <td>
+                                <c:out value="${investment.stocksAmount}"/>
+                            </td>
+                            <td>
+                                <c:out value="${investment.cryptoAmount}"/>
+                            </td>
+                        </tr>
+                        </c:forEach>
+                    </table>
                 </div>
             </div>
         </div>
@@ -64,6 +97,30 @@
                 <a href="/budgets/new">
                     <img src="/images/addbutton.png" alt="addbutton" class="addbtn budgetbtn">
                 </a>
+            </div>
+            <div class="mx-5 d-flex justify-content-evenly">
+                <div class="mx-5 spend-container">
+                    <h4>You have --- left to spend this month.</h4>
+                    <a href="/transaction" class="btn">Add Transaction</a>
+                </div>
+                <div class="mx-5 saving-container">
+                    <table class="table table-borderless budgetTable">
+                        <tr>
+                            <th>Budget</th>
+                            <th>Amount</th>
+                        </tr>
+                        <c:forEach var="budget" items="${budgetsList}">
+                        <tr>
+                            <td>
+                                <c:out value="${budget.category}"/>
+                            </td>
+                            <td>
+                                <c:out value="${budget.amount}"/>
+                            </td>
+                        </tr>
+                        </c:forEach>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
