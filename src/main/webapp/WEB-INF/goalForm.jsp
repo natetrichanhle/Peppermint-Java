@@ -26,6 +26,18 @@
     <!-- Enter body here -->
     <div class="container">    
         <h1>Add to your Goals</h1>
+        <form:form action="/goals/submit" method="post" modelAttribute="goal">
+            <div class="mb-3">
+                <form:label path="description" for="formInput" class="form-label">Description:
+                </form:label>
+                <form:input type="text" class="form-control" id="formInput" path="description" placeholder="" />
+                <form:errors path="description" class="text-danger" />
+            </div>
+            <div class="d-flex justify-content-end">
+                <a href = "/dashboard">Cancel</a>
+                <input type="submit" value="Submit" class="btn submit-btn">
+            </div>
+        </form:form>
     </div>
 </body>
 </html>
