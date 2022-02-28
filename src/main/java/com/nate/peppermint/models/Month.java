@@ -42,7 +42,7 @@ public class Month {
     private Integer utilityPercentage;
 
     @OneToMany(mappedBy="month",  cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    private List<Investment> goals;
+    private List<Goal> goals;
 
     @OneToOne(mappedBy="month", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private Investment investment;
@@ -113,11 +113,11 @@ public class Month {
         this.utilityPercentage = utilityPercentage;
     }
 
-    public List<Investment> getInvestments() {
+    public List<Goal> getGoals() {
         return goals;
     }
 
-    public void setInvestments(List<Investment> goals) {
+    public void setGoals(List<Goal> goals) {
         this.goals = goals;
     }
 
