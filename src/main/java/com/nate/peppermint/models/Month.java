@@ -146,11 +146,11 @@ public class Month {
         this.utilityPercentage = utilityPercentage;
     }
 
-    public List<Investment> getInvestments() {
+    public List<Goal> getGoals() {
         return goals;
     }
 
-    public void setInvestments(List<Investment> goals) {
+    public void setGoals(List<Goal> goals) {
         this.goals = goals;
     }
 
