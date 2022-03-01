@@ -24,7 +24,7 @@
 </head>
 <body>
     <!-- Enter body here -->
-    <div class="container">    
+    <div class="">    
         <h1>Add to your Investments</h1>
         <div class="range align-items-center">
             <div class="sliderValue">
