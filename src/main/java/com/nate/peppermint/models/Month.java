@@ -73,14 +73,6 @@ public class Month {
         this.id = id;
     }
 
-    public List<Goal> getGoals() {
-        return goals;
-    }
-
-    public void setGoals(List<Goal> goals) {
-        this.goals = goals;
-    }
-
     public Date getCreatedAt() {
         return createdAt;
     }
