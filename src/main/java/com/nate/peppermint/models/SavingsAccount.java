@@ -22,19 +22,20 @@ public class SavingsAccount {
     
     private int total;
     
-    // 1 : 1 account has one User
+    private int totalExpenses;
+
+    // 1 : 1 account has one Month
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "month_id")
+    private Month month;
 
     // 1 : M (savings account can have multiple expenses)
     @OneToMany(mappedBy="savingsAccount", fetch = FetchType.LAZY)
-    private List<Expense> expenses;
+    private List<Budget> expenses;
 
-
-    private int totalExpenses;
-
-    public SavingsAccount(){}
+    public SavingsAccount(){
+        
+    }
 
     public Long getId() {
         return id;
@@ -51,20 +52,20 @@ public class SavingsAccount {
     public void setTotal(int total) {
         this.total = total;
     }
-
-    public User getUser() {
-        return user;
+    
+    public Month getMonth() {
+        return month;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setMonth(Month month) {
+        this.month = month;
     }
 
-    public List<Expense> getExpenses() {
+    public List<Budget> getExpenses() {
         return expenses;
     }
 
-    public void setExpenses(List<Expense> expenses) {
+    public void setExpenses(List<Budget> expenses) {
         this.expenses = expenses;
     }
 

@@ -24,13 +24,12 @@ public class Investment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    private Integer totalInvestments;
+    
     private Integer rothIraAmount;
 
-    @NotNull
     private Integer stocksAmount;
 
-    @NotNull
     private Integer cryptoAmount;
 
     @Column(updatable = false)
@@ -82,6 +81,14 @@ public class Investment {
 
     public Integer getCryptoAmount() {
         return cryptoAmount;
+    }
+
+    public Integer getTotalInvestments() {
+        return totalInvestments;
+    }
+
+    public void setTotalInvestments(Integer totalInvestments) {
+        this.totalInvestments = totalInvestments;
     }
 
     public void setCryptoAmount(Integer cryptoAmount) {

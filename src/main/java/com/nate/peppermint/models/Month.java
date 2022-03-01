@@ -43,6 +43,9 @@ public class Month {
     @OneToOne(mappedBy="month", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private Investment investment;
 
+    @OneToOne(mappedBy="month", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    private SavingsAccount savings;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
