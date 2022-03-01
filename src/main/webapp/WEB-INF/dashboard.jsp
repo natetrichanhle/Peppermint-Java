@@ -66,26 +66,6 @@
                     </a>
                 </div>
                 <div class="mx-5">
-                    <table class="table table-borderless">
-                        <tr>
-                            <th>Roth IRA</th>
-                            <th>Stocks</th>
-                            <th>Crypto</th>
-                        </tr>
-                        <c:forEach var="investment" items="${investmentsList}">
-                        <tr>
-                            <td>
-                                <c:out value="${investment.rothIraAmount}"/>
-                            </td>
-                            <td>
-                                <c:out value="${investment.stocksAmount}"/>
-                            </td>
-                            <td>
-                                <c:out value="${investment.cryptoAmount}"/>
-                            </td>
-                        </tr>
-                        </c:forEach>
-                    </table>
                 </div>
             </div>
         </div>
