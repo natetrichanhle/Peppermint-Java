@@ -57,7 +57,7 @@ public class UserService {
             }
             
             return newUserTemp;
-        
+        }
         }
     public User login(LoginUser newLoginObject, BindingResult result) {
          // TO-DO - Reject values:
