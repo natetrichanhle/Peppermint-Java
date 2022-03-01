@@ -3,6 +3,7 @@ package com.nate.peppermint.services;
 import java.util.Optional;
 
 import com.nate.peppermint.models.LoginUser;
+import com.nate.peppermint.models.Month;
 import com.nate.peppermint.models.User;
 import com.nate.peppermint.repositories.UserRepository;
 
