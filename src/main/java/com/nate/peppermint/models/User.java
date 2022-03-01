@@ -48,12 +48,8 @@ public class User {
     @Min(13920)
     private Integer annualIncome;
 
-    @OneToOne(mappedBy="user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    private SavingsAccount savingsAccount;
-
     @OneToMany(mappedBy="user",  cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private List<Month> months;
-
 
     @Transient
     @NotEmpty(message = "Confirm Password is required!")
@@ -127,14 +123,6 @@ public class User {
 
     public void setAnnualIncome(Integer annualIncome) {
         this.annualIncome = annualIncome;
-    }
-
-    public SavingsAccount getSavingsAccount() {
-        return savingsAccount;
-    }
-
-    public void setSavingsAccount(SavingsAccount savingsAccount) {
-        this.savingsAccount = savingsAccount;
     }
 
     public Date getCreatedAt() {

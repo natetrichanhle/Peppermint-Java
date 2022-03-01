@@ -43,6 +43,9 @@ public class Month {
     @OneToOne(mappedBy="month", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private Investment investment;
 
+    @OneToOne(mappedBy="month", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    private SavingsAccount savings;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
@@ -71,14 +74,6 @@ public class Month {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public List<Goal> getGoals() {
-        return goals;
-    }
-
-    public void setGoals(List<Goal> goals) {
-        this.goals = goals;
     }
 
     public Date getCreatedAt() {

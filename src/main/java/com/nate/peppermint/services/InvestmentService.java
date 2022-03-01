@@ -21,8 +21,8 @@ public class InvestmentService {
 	}
 
 	// creates a investment
-	public Investment createInvestment(Investment b) {
-		return investmentRepository.save(b);
+	public Investment createInvestment(Investment inv) {
+		return investmentRepository.save(inv);
 	}
 
 	// retrieves a investment

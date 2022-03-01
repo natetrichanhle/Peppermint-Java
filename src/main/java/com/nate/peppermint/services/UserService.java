@@ -2,8 +2,10 @@ package com.nate.peppermint.services;
 
 import java.util.Optional;
 
+import com.nate.peppermint.models.Investment;
 import com.nate.peppermint.models.LoginUser;
 import com.nate.peppermint.models.Month;
+import com.nate.peppermint.models.SavingsAccount;
 import com.nate.peppermint.models.User;
 import com.nate.peppermint.repositories.UserRepository;
 
@@ -20,6 +22,12 @@ public class UserService {
     
     @Autowired
     private MonthService monthService;
+
+    @Autowired
+    private InvestmentService investmentService;
+
+    @Autowired
+    private SavingsService savingsService; 
     
     // TO-DO: Write register and login methods!
     public User register(User newUser, BindingResult result) {
@@ -42,6 +50,7 @@ public class UserService {
             newUser.setPassword(hashed);
             User newUserTemp = userRepository.save(newUser);
 
+            //creates all 12 months for a user
             for (int i = 1; i <= 12; i++){
                 System.out.println(i);
                 Month newMonth = monthService.createMonth(new Month(), i);
@@ -50,12 +59,23 @@ public class UserService {
                 newMonth.setInvestmentPercentage(30);
                 newMonth.setSavingsPercentage(50);
                 newMonth.setUtilityPercentage(20);
-                // newUserTemp.getMonths().add(newMonth);
                 newMonth.setUser(newUserTemp);
                 monthService.updateMonth(newMonth);
-                
+                //creates an investment acct for each month
+                Investment newInvestment = investmentService.createInvestment(new Investment());
+                newInvestment.setTotalInvestments(2000);
+                newInvestment.setRothIraAmount(50);
+                newInvestment.setStocksAmount(30);
+                newInvestment.setCryptoAmount(20);
+                newInvestment.setMonth(newMonth);
+                investmentService.updateInvestment(newInvestment);
+
+                //creates a savings account for each month
+                SavingsAccount newSavings = savingsService.createSavings(new SavingsAccount());
+                newSavings.setTotal(2000);
+                newSavings.setMonth(newMonth);
+                savingsService.createSavings(newSavings);
             }
-            
             return newUserTemp;
         }
         }
