@@ -40,12 +40,12 @@ public class PeppermintController {
     @Autowired
     private BudgetService budgetService;
 
-    @GetMapping("/dashboard")
+    @GetMapping("/dashboard/id")
     public String dashboard(HttpSession sesh, Model model) {
         // retrieve from DB the session id
         Long userId = (Long) sesh.getAttribute("user_id");
         // check if userID !null
-        if (userId == null) {
+        if (userId == null || !moth.getUser().getId().equals(userId)) {
             return "redirect:/";
         } else {
             User loggedInUser = userService.findOne(userId);
