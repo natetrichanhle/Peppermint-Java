@@ -24,13 +24,13 @@ public class Investment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer totalInvestments;
+    private Double totalInvestments;
     
-    private Integer rothIraAmount;
+    private Double rothIraAmount;
 
-    private Integer stocksAmount;
+    private Double stocksAmount;
 
-    private Integer cryptoAmount;
+    private Double cryptoAmount;
 
     @Column(updatable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -63,35 +63,35 @@ public class Investment {
         this.id = id;
     }
 
-    public Integer getRothIraAmount() {
+    public Double getRothIraAmount() {
         return rothIraAmount;
     }
 
-    public void setRothIraAmount(Integer rothIraAmount) {
+    public void setRothIraAmount(Double rothIraAmount) {
         this.rothIraAmount = rothIraAmount;
     }
 
-    public Integer getStocksAmount() {
+    public Double getStocksAmount() {
         return stocksAmount;
     }
 
-    public void setStocksAmount(Integer stocksAmount) {
+    public void setStocksAmount(Double stocksAmount) {
         this.stocksAmount = stocksAmount;
     }
 
-    public Integer getCryptoAmount() {
+    public Double getCryptoAmount() {
         return cryptoAmount;
     }
 
-    public Integer getTotalInvestments() {
+    public Double getTotalInvestments() {
         return totalInvestments;
     }
 
-    public void setTotalInvestments(Integer totalInvestments) {
+    public void setTotalInvestments(Double totalInvestments) {
         this.totalInvestments = totalInvestments;
     }
 
-    public void setCryptoAmount(Integer cryptoAmount) {
+    public void setCryptoAmount(Double cryptoAmount) {
         this.cryptoAmount = cryptoAmount;
     }
 

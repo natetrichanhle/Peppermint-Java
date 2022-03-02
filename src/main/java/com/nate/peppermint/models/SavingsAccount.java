@@ -20,9 +20,9 @@ public class SavingsAccount {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private int total;
+    private Double total;
     
-    private int totalExpenses;
+    private Double totalExpenses;
 
     // 1 : 1 account has one Month
     @OneToOne(fetch = FetchType.LAZY)
@@ -45,11 +45,11 @@ public class SavingsAccount {
         this.id = id;
     }
 
-    public int getTotal() {
+    public Double getTotal() {
         return total;
     }
 
-    public void setTotal(int total) {
+    public void setTotal(Double total) {
         this.total = total;
     }
     
@@ -69,11 +69,11 @@ public class SavingsAccount {
         this.expenses = expenses;
     }
 
-    public int getTotalExpenses() {
+    public Double getTotalExpenses() {
         return totalExpenses;
     }
 
-    public void setTotalExpenses(int totalExpenses) {
+    public void setTotalExpenses(Double totalExpenses) {
         this.totalExpenses = totalExpenses;
     }
 

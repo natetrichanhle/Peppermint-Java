@@ -28,7 +28,7 @@ public class Budget {
     private String category;
 
     @NotNull
-    private Integer amount;
+    private Double amount;
 
     // M : 1 with SavingsAccount
     @ManyToOne(fetch = FetchType.LAZY)
@@ -70,11 +70,11 @@ public class Budget {
         this.category = category;
     }
 
-    public Integer getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(Integer amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 

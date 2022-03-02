@@ -29,13 +29,13 @@ public class Month {
     
     private String monthOfYear;
     
-    private Integer monthlyTotal;
+    private Double monthlyTotal;
 
-    private Integer savingsPercentage;
+    private Double savingsPercentage;
 
-    private Integer investmentPercentage;
+    private Double investmentPercentage;
 
-    private Integer utilityPercentage;
+    private Double utilityPercentage;
 
     @OneToMany(mappedBy="month",  cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private List<Goal> goals;
@@ -109,35 +109,35 @@ public class Month {
         this.monthOfYear = monthOfYear;
     }
 
-    public Integer getMonthlyTotal() {
+    public Double getMonthlyTotal() {
         return monthlyTotal;
     }
 
-    public void setMonthlyTotal(Integer monthlyTotal) {
+    public void setMonthlyTotal(Double monthlyTotal) {
         this.monthlyTotal = monthlyTotal;
     }
 
-    public Integer getSavingsPercentage() {
+    public Double getSavingsPercentage() {
         return savingsPercentage;
     }
 
-    public void setSavingsPercentage(Integer savingsPercentage) {
+    public void setSavingsPercentage(Double savingsPercentage) {
         this.savingsPercentage = savingsPercentage;
     }
 
-    public Integer getInvestmentPercentage() {
+    public Double getInvestmentPercentage() {
         return investmentPercentage;
     }
 
-    public void setInvestmentPercentage(Integer investmentPercentage) {
+    public void setInvestmentPercentage(Double investmentPercentage) {
         this.investmentPercentage = investmentPercentage;
     }
 
-    public Integer getUtilityPercentage() {
+    public Double getUtilityPercentage() {
         return utilityPercentage;
     }
 
-    public void setUtilityPercentage(Integer utilityPercentage) {
+    public void setUtilityPercentage(Double utilityPercentage) {
         this.utilityPercentage = utilityPercentage;
     }
 
