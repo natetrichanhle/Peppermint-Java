@@ -45,7 +45,7 @@ public class User {
 
     @NotNull(message="must provide yearly income")
     @Min(13920)
-    private Integer annualIncome;
+    private Double annualIncome;
 
     @OneToMany(mappedBy="user",  cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private List<Month> months;
@@ -116,11 +116,11 @@ public class User {
         this.confirm = confirm;
     }
 
-    public Integer getAnnualIncome() {
+    public Double getAnnualIncome() {
         return annualIncome;
     }
 
-    public void setAnnualIncome(Integer annualIncome) {
+    public void setAnnualIncome(Double annualIncome) {
         this.annualIncome = annualIncome;
     }
 

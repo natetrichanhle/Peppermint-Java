@@ -50,29 +50,34 @@ public class UserService {
             newUser.setPassword(hashed);
             User newUserTemp = userRepository.save(newUser);
 
+            Double monthlyTotal = (newUserTemp.getAnnualIncome() / 12);
             //creates all 12 months for a user
             for (int i = 1; i <= 12; i++){
-                System.out.println(i);
                 Month newMonth = monthService.createMonth(new Month(), i);
                 System.out.println(newMonth);
-                newMonth.setMonthlyTotal(2000);
-                newMonth.setInvestmentPercentage(30);
-                newMonth.setSavingsPercentage(50);
-                newMonth.setUtilityPercentage(20);
+                newMonth.setMonthlyTotal(monthlyTotal);
+                newMonth.setInvestmentPercentage(30.0);
+                newMonth.setSavingsPercentage(50.0);
+                newMonth.setUtilityPercentage(20.0);
                 newMonth.setUser(newUserTemp);
                 monthService.updateMonth(newMonth);
                 //creates an investment acct for each month
+                // Double monthlyTotalTemp = newMonth.getMonthlyTotal();
+                // Double investmentPercentage = (double) newMonth.getInvestmentPercentage() / 100.0;
+                Double investmentTotal = newMonth.getMonthlyTotal() * (newMonth.getInvestmentPercentage() / 100);
+        
                 Investment newInvestment = investmentService.createInvestment(new Investment());
-                newInvestment.setTotalInvestments(2000);
-                newInvestment.setRothIraAmount(50);
-                newInvestment.setStocksAmount(30);
-                newInvestment.setCryptoAmount(20);
+                newInvestment.setTotalInvestments(investmentTotal);
+                newInvestment.setRothIraAmount(50.0);
+                newInvestment.setStocksAmount(30.0);
+                newInvestment.setCryptoAmount(20.0);
                 newInvestment.setMonth(newMonth);
                 investmentService.updateInvestment(newInvestment);
 
                 //creates a savings account for each month
+                Double savingsTotal = newMonth.getMonthlyTotal() * (newMonth.getSavingsPercentage() / 100);
                 SavingsAccount newSavings = savingsService.createSavings(new SavingsAccount());
-                newSavings.setTotal(2000);
+                newSavings.setTotal(savingsTotal);
                 newSavings.setMonth(newMonth);
                 savingsService.createSavings(newSavings);
             }
