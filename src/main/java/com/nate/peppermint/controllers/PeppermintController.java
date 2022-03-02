@@ -8,11 +8,14 @@ import javax.validation.Valid;
 import com.nate.peppermint.models.Budget;
 import com.nate.peppermint.models.Goal;
 import com.nate.peppermint.models.Investment;
+import com.nate.peppermint.models.Month;
 import com.nate.peppermint.models.SavingsAccount;
 import com.nate.peppermint.models.User;
+import com.nate.peppermint.repositories.MonthRepository;
 import com.nate.peppermint.services.BudgetService;
 import com.nate.peppermint.services.GoalService;
 import com.nate.peppermint.services.InvestmentService;
+import com.nate.peppermint.services.MonthService;
 import com.nate.peppermint.services.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,33 +43,34 @@ public class PeppermintController {
     @Autowired
     private BudgetService budgetService;
 
+    @Autowired
+    private MonthService monthService;
+
     @GetMapping("/landing")
-    public String dashboard(HttpSession sesh, Model model) {
+    public String landing(HttpSession sesh, Model model) {
         Long userId = (Long) sesh.getAttribute("user_id");
-        // check if userID !null !moth.getUser().getId().equals(userId)
+        // check if userID
         if (userId == null ) {
             return "redirect:/";
         }else {
-            
+            User loggedInUser = userService.findOne(userId);
+            model.addAttribute("loggedInUser", loggedInUser);
+            return "landing.jsp";
         }
     }
 
-    @GetMapping("/dashboard")
-    public String dashboard(HttpSession sesh, Model model) {
+    @GetMapping("/dashboard/{id}")
+    public String dashboard(HttpSession sesh, Model model, @PathVariable("id") Long id) {
         // retrieve from DB the session id
         Long userId = (Long) sesh.getAttribute("user_id");
-        // check if userID !null !moth.getUser().getId().equals(userId)
-        if (userId == null ) {
-            return "redirect:/";
+        // check if userID !null
+        Month month = monthService.findMonth(id);
+        model.addAttribute("month", month);
+        if (userId == null || !month.getUser().getId().equals(userId)) {
+            return "redirect:/landing";
         } else {
             User loggedInUser = userService.findOne(userId);
             model.addAttribute("loggedInUser", loggedInUser);
-            List<Goal> goals = goalService.allGoals();
-            model.addAttribute("goalsList",goals);
-            List<Investment> investments = investmentService.allInvestments();
-            model.addAttribute("investmentsList",investments);
-            List<Budget> budgets = budgetService.allBudgets();
-            model.addAttribute("budgetsList",budgets);
             return "dashboard.jsp";
         }
     }

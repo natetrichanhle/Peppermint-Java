@@ -28,7 +28,7 @@
     </div>
     <!-- Enter body here -->
     <div class="container mx-auto p-5"> 
-        <h2>Welcome, <c:out value="${loggedInuser.getFirstName}"/></h2>
+        <h2>Welcome, <c:out value="${loggedInUser.getName()}"/></h2>
         <div>
             <p>Gone are the days when people use to only rely on their 
                 savings for future security. In today's world, savings 
@@ -41,7 +41,11 @@
                 to help make good decescions on how much of your money goes where every month.
             </p>
         </div>
-
+        
+            <c:forEach var = "i" items="${loggedInUser.getMonths()}">
+                    <a href="/dashboard/${i.getId()}"><c:out value = "${i.getMonthOfYear()}"/></a>
+            </c:forEach>
+        
         
     </div>
 

@@ -45,7 +45,7 @@ public class UserController {
             return "userForm.jsp";
         } else {
             session.setAttribute("user_id", newUser.getId());
-            return "redirect:/dashboard";
+            return "redirect:/landing";
         }
     }
 
@@ -58,7 +58,7 @@ public class UserController {
             return "userForm.jsp";
         } else {
             session.setAttribute("user_id", user.getId());
-            return "redirect:/dashboard";
+            return "redirect:/landing";
         }
     }
 
