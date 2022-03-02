@@ -26,6 +26,13 @@
     <!-- Enter body here -->
     <div class="navbar logo">    
         <img src="/images/peppermint.png" alt="logo" class="w-25">
+        <div>
+            <select name="month-dropdown">
+                <option>
+                    
+                </option>
+            </select>
+        </div>
     </div>
     <div class="container d-flex">
         <div class="accounts-container">
