@@ -31,13 +31,24 @@
         <div class="accounts-container">
             <div class="accounts">
                 <div class="d-flex justify-content-center">
-                    <h1 class="dash-h1 col-sm-6 col-md-8 account-h1">Accounts</h1>
+                    <!-- <h1 class="dash-h1 col-sm-6 col-md-8 account-h1">Accounts</h1> -->
                     <!-- <a href="/accounts/new" class="col-6 col-md-4">
                         <img src="/images/addbutton.png" alt="addbutton" class="addbtn accountbtn">
                     </a> -->
+                    <h1 class="account-head">Accounts</h1>
+                </div>
+                <div class="accounts-tabs">
+                    <h3 class="savings-h3">Savings: </h3>
+                </div>
+                <div class="accounts-tabs2">
+                    <h3 class="investments-h3">Investments: </h3>
+                </div>
+                <div class="accounts-tabs3">
+                    <h3 class="utilities-h3">Utilities: </h3>
                 </div>
             </div>
         </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
         <div class="gi-container">
             <div class="goals">
                 <div class="d-flex justify-content-center">
@@ -46,18 +57,27 @@
                         <img src="/images/addbutton.png" alt="addbutton" class="addbtn goalbtn">
                     </a>
                 </div>
-                <div class="mx-5">
-                    <table>
+                <div class="goal-info mx-5">
+                    <table class="table table-borderless d-flex align-items-center justify-content-center">
                     <c:forEach var="goal" items="${goalsList}">
                         <tr>
                             <td class="goalList">
                                 <c:out value="${goal.description}"/>
+                            </td>
+                            <td>
+                                <td>
+                                    <form action="/goals/${goal.id}" method="post">
+                                        <input type="hidden" name="_method" value="delete">
+                                        <input type="submit" value="Delete" class="btn goal-deletebtn">
+                                    </form>
+                                </td>
                             </td>
                         </tr>
                     </c:forEach>
                     </table>
                 </div>
             </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
             <div class="investments">
                 <div class="d-flex justify-content-center">
                     <h1 class="dash-h1 invest-h1">Investments</h1>
@@ -66,10 +86,12 @@
                     </a>
                 </div>
                 <div class="mx-5">
+                    <!-- render some shit here for investments -->
                 </div>
             </div>
         </div>
     </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <div class ="container">
         <div class="budget-container">
             <div class="d-flex justify-content-center">
@@ -80,22 +102,28 @@
             </div>
             <div class="mx-5 d-flex justify-content-evenly">
                 <div class="mx-5 spend-container">
-                    <h4>You have --- left to spend this month.</h4>
-                    <a href="/transaction" class="btn">Add Transaction</a>
+                    <p class="expense-h4">You have --- left to spend this month.</p>
                 </div>
                 <div class="mx-5 saving-container">
-                    <table class="table table-borderless budgetTable">
+                    <table class="table table-hover budgetTable">
                         <tr>
-                            <th>Budget</th>
-                            <th>Amount</th>
+                            <th class="budget-th">Expenses</th>
+                            <th class="budget-th">Amount</th>
+                            <th class="budget-th">Actions</th>
                         </tr>
                         <c:forEach var="budget" items="${budgetsList}">
-                        <tr>
+                        <tr class="budgetList">
                             <td>
                                 <c:out value="${budget.category}"/>
                             </td>
                             <td>
-                                <c:out value="${budget.amount}"/>
+                                $<c:out value="${budget.amount}"/>
+                            </td>
+                            <td>
+                                <form action="/budgets/${budget.id}" method="post">
+                                    <input type="hidden" name="_method" value="delete">
+                                    <input type="submit" value="Delete" class="btn">
+                                </form>
                             </td>
                         </tr>
                         </c:forEach>

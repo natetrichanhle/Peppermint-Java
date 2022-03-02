@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import com.nate.peppermint.models.Budget;
 import com.nate.peppermint.models.Goal;
 import com.nate.peppermint.models.Investment;
+import com.nate.peppermint.models.SavingsAccount;
 import com.nate.peppermint.models.User;
 import com.nate.peppermint.services.BudgetService;
 import com.nate.peppermint.services.GoalService;
@@ -18,8 +19,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -56,42 +59,32 @@ public class PeppermintController {
             return "dashboard.jsp";
         }
     }
-    // Expense
-    @GetMapping("/form/expenses")
-    public String GoalForms(HttpSession sesh, Model model) {
-        Long userId = (Long) sesh.getAttribute("user_id");
-        if (userId == null) {
-            return "redirect:/";
-        } else {
-            User loggedInUser = userService.findOne(userId);
-            model.addAttribute("loggedInUser", loggedInUser);
-            return "editExpenses.jsp";
-        }
-    }
-
-    @GetMapping("/form/Goals")
-    public String forms(HttpSession sesh, Model model) {
-        Long userId = (Long) sesh.getAttribute("user_id");
-        if (userId == null) {
-            return "redirect:/";
-        } else {
-            User loggedInUser = userService.findOne(userId);
-            model.addAttribute("loggedInUser", loggedInUser);
-            return "editGoals.jsp";
-        }
-    }
 
     // GOALS
     @GetMapping("/goals/new")
     public String goals(Model model, @ModelAttribute("goal") Goal goal, HttpSession session){
-        List<Goal> goals = goalService.allGoals();
-        model.addAttribute("goals", goals);
-        return "goalForm.jsp";
+        // Route Guard
+        Long userId = (Long) session.getAttribute("user_id");
+        // check if userId is null
+        if(userId == null){
+            return "redirect:/";
+        } else {
+            User thisLoggedInUser = userService.findOne(userId);
+            model.addAttribute("thisLoggedInUser",thisLoggedInUser);
+            List<Goal> goals = goalService.allGoals();
+            model.addAttribute("goals", goals);
+            return "goalForm.jsp";
+        }
     }
 
     @PostMapping("/goals/submit")
     public String createGoal(@Valid @ModelAttribute("goal") Goal goal, BindingResult result, Model model, HttpSession session){
         if(result.hasErrors()){
+            // grab the user again
+            Long userId = (Long) session.getAttribute("user_id");
+            User thisLoggedInUser = userService.findOne(userId);
+            model.addAttribute("thisLoggedInUser",thisLoggedInUser);
+            // All the Goals
             List<Goal> goals = goalService.allGoals();
             model.addAttribute("goals", goals);
             return "goalForm.jsp";
@@ -100,6 +93,12 @@ public class PeppermintController {
             return "redirect:/dashboard";
         }
     }
+
+    @DeleteMapping("/goals/{id}")
+	public String destroyGoal(@PathVariable("id") Long id) {
+		goalService.deleteGoal(id);
+		return "redirect:/dashboard";
+	}
 
     // INVESTMENTS
     @GetMapping("/investments/new")
@@ -130,14 +129,20 @@ public class PeppermintController {
     }
 
     @PostMapping("/budgets/submit")
-    public String createBudget(@Valid @ModelAttribute("budget") Budget budget, BindingResult result, Model model, HttpSession session){
+    public String createBudget(@Valid @ModelAttribute("budget") Budget budget,SavingsAccount savingsAccount, BindingResult result, Model model, HttpSession session){
         if(result.hasErrors()){
             List<Budget> budgets = budgetService.allBudgets();
             model.addAttribute("budgets", budgets);
             return "budgetForm.jsp";
         } else {
-            budgetService.createBudget(budget);
+            budgetService.createBudget(budget, savingsAccount);
             return "redirect:/dashboard";
         }
     }
+
+    @DeleteMapping("/budgets/{id}")
+	public String destroyBudget(@PathVariable("id") Long id, SavingsAccount savingsAccount) {
+		budgetService.deleteBudget(id, savingsAccount);
+		return "redirect:/dashboard";
+	}
 }

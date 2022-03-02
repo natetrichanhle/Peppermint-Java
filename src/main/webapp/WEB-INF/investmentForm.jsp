@@ -25,26 +25,28 @@
 </head>
 <body>
     <!-- Enter body here -->
-    <h1 class="d-flex justify-content-center">Add to your Investments</h1>
-    <div class="container">
-        <label>RothIRA: </label>    
-        <input type="range" id="my-slider" min="0" max="100" value="50" oninput="slider()">
-        <div id="slider-value">0</div>
-    </div>
-    <div class="container2">    
-        <label>Stocks: </label>    
-        <input type="range" id="my-slider2" min="0" max="100" value="50" oninput="slider2()">
-        <div id="slider-value2">0</div>
-    </div>
-    <div class="container3">
-        <label>Crypto: </label>    
-        <input type="range" id="my-slider3" min="0" max="100" value="50" oninput="slider3()">
-        <div id="slider-value3">0</div>
-    </div>
-    <div class="slider-btn">
-        <a href = "/dashboard" class="btn mx-5">Cancel</a>
-        <input type="submit" value="Submit" class="btn submit-btn">
-    </div>
+    <form:form action="/investments/submit" method="POST" modelAttribute="investment">
+        <h1 class="d-flex justify-content-center">Add to your Investments</h1>
+        <div class="container">
+            <form:label path="rothIraAmount">RothIRA: </form:label>    
+            <form:input type="range" id="my-slider" min="0" max="100" value="50" oninput="slider()" path="rothIraAmount"/>
+            <div id="slider-value">0</div>
+        </div>
+        <div class="container2">    
+            <form:label path="stocksAmount">Stocks: </form:label>    
+            <form:input type="range" id="my-slider2" min="0" max="100" value="50" oninput="slider2()" path="stocksAmount"/>
+            <div id="slider-value2">0</div>
+        </div>
+        <div class="container3">
+            <form:label path="cryptoAmount">Crypto: </form:label>    
+            <form:input type="range" id="my-slider3" min="0" max="100" value="50" oninput="slider3()" path="cryptoAmount"/>
+            <div id="slider-value3">0</div>
+        </div>
+        <div class="slider-btn">
+            <a href = "/dashboard" class="btn mx-5">Cancel</a>
+            <input type="submit" value="Submit" class="btn submit-btn">
+        </div>
+    </form:form>
 
 <!-- ------------------JS-------------------- -->
 

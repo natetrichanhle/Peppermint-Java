@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.nate.peppermint.models.Budget;
+import com.nate.peppermint.models.SavingsAccount;
 import com.nate.peppermint.repositories.BudgetRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +16,18 @@ public class BudgetService {
 	@Autowired
     private BudgetRepository budgetRepository;
 
+	@Autowired
+    private SavingsService savingsService;
+
 	// returns all the budgets
 	public List<Budget> allBudgets() {
 		return budgetRepository.findAll();
 	}
 
 	// creates a budget
-	public Budget createBudget(Budget b) {
+	public Budget createBudget(Budget b, SavingsAccount savingsAccount) {
+		savingsAccount.setTotalExpenses(savingsAccount.getTotalExpenses()+ b.getAmount());
+		savingsService.createSavings(savingsAccount);
 		return budgetRepository.save(b);
 	}
 
@@ -39,7 +45,9 @@ public class BudgetService {
 			return budgetRepository.save(updatedBudget);
 	}
 
-	public void deleteBudget(Long id) {
-			budgetRepository.deleteById(id);			
+	public void deleteBudget(Long id, SavingsAccount savingsAccount) {
+		savingsAccount.setTotalExpenses(savingsAccount.getTotalExpenses()- findBudget(id).getAmount());
+		savingsService.createSavings(savingsAccount);
+		budgetRepository.deleteById(id);			
 	}
 }

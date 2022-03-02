@@ -45,10 +45,15 @@
 
 .goalList{
     font-size: 20px;
+    color:white
+}
+
+.budgetList{
+    color:white;
 }
 
 .budgetTable{
-    font-size: 25px;
+    font-size: 23px;
 }
 
 .spend-container{
@@ -116,9 +121,11 @@
 .account-h1{
     /* margin-left: 215px; */
     margin-left: 125px;
+    color:white;
 }
 
 .goal-h1{
+    color:white;
     padding-left: 345px;
 }
 
@@ -126,18 +133,91 @@
     padding-left: 200px;
 }
 
+.goal-deletebtn{
+    background-color: #3c3c3c;
+    margin-left: 20px;
+}
+
+.goal-info{
+    display: flex;
+    justify-content: center;
+}
+
 .investbtn{
     padding-left: 225px;
 }
 
 .invest-h1{
+    color:white;
     padding-left: 260px;
 }
 
 .budget-h1{
+    color:white;
     padding-left: 420px;
 }
 
 .budgetbtn{
     padding-left: 400px;
+}
+
+.expense-h4{
+    padding-top: 8px;
+    color:white;
+    font-size: 23px;
+}
+
+.budget-th {
+    color:white;
+    font-weight: normal;
+}
+
+
+/* accounts */
+
+.accounts-tabs {
+    background-color: #9e1a2c;
+    height: 85px;
+    margin: 10px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.accounts-tabs2 {
+    background-color: #9e1a2c;
+    height: 85px;
+    margin: 10px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.accounts-tabs3 {
+    background-color: #9e1a2c;
+    height: 85px;
+    margin: 10px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.savings-h3{
+    padding-left: 25px;
+    color:white;
+}
+
+.investments-h3{
+    color:white;
+    padding-left: 25px;
+}
+
+.utilities-h3{
+    color:white;
+    padding-left: 25px;
+}
+
+.account-head{
+    margin-top:25px;
+    color:white;
 }
