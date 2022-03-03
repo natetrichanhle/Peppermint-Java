@@ -248,3 +248,8 @@
     height: 225px;
     width: auto;
 }
+
+.box-shadow{
+    border: 2px solid black;
+    box-shadow: 10px 10px 20px #888888;
+}
