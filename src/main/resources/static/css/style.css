@@ -179,7 +179,7 @@
     background-color: #9e1a2c;
     height: 85px;
     margin: 10px;
-    margin-top: 25px;
+    margin-top: 50px;
     display: flex;
     align-items: center;
 }
@@ -202,6 +202,15 @@
     align-items: center;
 }
 
+.accounts-tabs4 {
+    background-color: #9e1a2c;
+    height: 85px;
+    margin: 10px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+}
+
 .savings-h3{
     padding-left: 25px;
     color:white;
@@ -217,7 +226,19 @@
     padding-left: 25px;
 }
 
-.account-head{
-    margin-top:25px;
+.total-h3{
+    padding-left: 25px;
     color:white;
+}
+
+.account-head{
+    color:white;
+}
+.month-head{
+    color:white;
+    padding-right: 10px;
+}
+
+.month-container {
+    margin-top: 15px;
 }

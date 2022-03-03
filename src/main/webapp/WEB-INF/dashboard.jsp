@@ -30,8 +30,10 @@
     <div class="container d-flex">
         <div class="accounts-container">
             <div class="accounts">
-                <div class="d-flex justify-content-center align-items-center">
-                    <h1>${month.getMonthOfYear()}</h1>
+                <div class="d-flex justify-content-center align-items-center month-container">
+                    <div>
+                        <h1 class="month-head">${month.getMonthOfYear()}</h1>
+                    </div>
                     <div>
                         <select name="month-dropdown">
                             <c:forEach var="m" items="${loggedInUser.getMonths()}">
@@ -42,17 +44,17 @@
                         </select>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center">
-                    <h1 class="account-head">Accounts</h1>
+                <div class="accounts-tabs4">
+                    <h3 class="total-h3">Monthly Income: $${Math.floor(month.getMonthlyTotal())}</h3>
                 </div>
                 <div class="accounts-tabs">
-                    <h3 class="savings-h3">Savings: </h3>
+                    <h3 class="savings-h3">Savings: $${Math.floor(month.getSavings().getTotal())}</h3>
                 </div>
                 <div class="accounts-tabs2">
-                    <h3 class="investments-h3">Investments: </h3>
+                    <h3 class="investments-h3">Investments: $${Math.floor(month.getInvestment().getTotalInvestments())}</h3>
                 </div>
                 <div class="accounts-tabs3">
-                    <h3 class="utilities-h3">Utilities: </h3>
+                    <h3 class="utilities-h3">Utilities: $${Math.floor(month.getSavings().getTotal() - month.getInvestment().getTotalInvestments())}</h3>
                 </div>
             </div>
         </div>
@@ -93,8 +95,11 @@
                         <img src="/images/addbutton.png" alt="addbutton" class="addbtn investbtn">
                     </a>
                 </div>
-                <div class="mx-5">
+                <div class="mx-5 d-flex justify-content-between">
                     <!-- render some shit here for investments -->
+                    <h3>Roth Ira:</h3>
+                    <h3>Stocks:</h3>
+                    <h3>Crypto:</h3>
                 </div>
             </div>
         </div>
