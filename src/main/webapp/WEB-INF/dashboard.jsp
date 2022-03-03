@@ -26,22 +26,23 @@
     <!-- Enter body here -->
     <div class="navbar logo">    
         <img src="/images/peppermint.png" alt="logo" class="w-25">
-        <div>
-            <select name="month-dropdown">
-                <option>
-                    
-                </option>
-            </select>
-        </div>
     </div>
     <div class="container d-flex">
         <div class="accounts-container">
             <div class="accounts">
+                <div class="d-flex justify-content-center align-items-center">
+                    <h1>${month.getMonthOfYear()}</h1>
+                    <div>
+                        <select name="month-dropdown">
+                            <c:forEach var="m" items="${loggedInUser.getMonths()}">
+                                <option>
+                                    <c:out value="${m.getMonthOfYear()}" />
+                                </option>
+                            </c:forEach>
+                        </select>
+                    </div>
+                </div>
                 <div class="d-flex justify-content-center">
-                    <!-- <h1 class="dash-h1 col-sm-6 col-md-8 account-h1">Accounts</h1> -->
-                    <!-- <a href="/accounts/new" class="col-6 col-md-4">
-                        <img src="/images/addbutton.png" alt="addbutton" class="addbtn accountbtn">
-                    </a> -->
                     <h1 class="account-head">Accounts</h1>
                 </div>
                 <div class="accounts-tabs">
@@ -60,13 +61,13 @@
             <div class="goals">
                 <div class="d-flex justify-content-center">
                     <h1 class="dash-h1 col-sm-6 col-md-8 goal-h1">Goals</h1>
-                    <a href="/goals/new" class="col-6 col-md-4">
+                    <a href="/goals/new/" class="col-6 col-md-4">
                         <img src="/images/addbutton.png" alt="addbutton" class="addbtn goalbtn">
                     </a>
                 </div>
                 <div class="goal-info mx-5">
                     <table class="table table-borderless d-flex align-items-center justify-content-center">
-                    <c:forEach var="goal" items="${goalsList}">
+                    <c:forEach var="goal" items="${month.getGoals()}">
                         <tr>
                             <td class="goalList">
                                 <c:out value="${goal.description}"/>
@@ -102,7 +103,7 @@
     <div class ="container">
         <div class="budget-container">
             <div class="d-flex justify-content-center">
-                <h1 class="dash-h1 budget-h1">Spending & Budgeting</h1>
+                <h1 class="dash-h1 budget-h1">Savings & Expenses</h1>
                 <a href="/budgets/new">
                     <img src="/images/addbutton.png" alt="addbutton" class="addbtn budgetbtn">
                 </a>
@@ -118,7 +119,7 @@
                             <th class="budget-th">Amount</th>
                             <th class="budget-th">Actions</th>
                         </tr>
-                        <c:forEach var="budget" items="${budgetsList}">
+                        <c:forEach var="budget" items="${month.getSavings().getExpenses()}">
                         <tr class="budgetList">
                             <td>
                                 <c:out value="${budget.category}"/>

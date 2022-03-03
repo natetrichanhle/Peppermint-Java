@@ -94,4 +94,12 @@ public class Budget {
         this.updatedAt = updatedAt;
     }
 
+    public SavingsAccount getSavingsAccount() {
+        return savingsAccount;
+    }
+
+    public void setSavingsAccount(SavingsAccount savingsAccount) {
+        this.savingsAccount = savingsAccount;
+    }
+
 }

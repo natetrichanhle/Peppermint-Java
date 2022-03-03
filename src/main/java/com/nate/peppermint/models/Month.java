@@ -156,5 +156,12 @@ public class Month {
     public void setInvestment(Investment investment) {
         this.investment = investment;
     }
-    
+
+    public SavingsAccount getSavings() {
+        return savings;
+    }
+
+    public void setSavings(SavingsAccount savings) {
+        this.savings = savings;
+    }
 }

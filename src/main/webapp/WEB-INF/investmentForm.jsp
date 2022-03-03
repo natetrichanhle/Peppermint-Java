@@ -26,6 +26,7 @@
 <body>
     <!-- Enter body here -->
     <form:form action="/investments/submit" method="POST" modelAttribute="investment">
+        <form:input type="hidden" path="month" value="${monthId}"/>
         <h1 class="d-flex justify-content-center">Add to your Investments</h1>
         <div class="container">
             <form:label path="rothIraAmount">RothIRA: </form:label>    
@@ -43,7 +44,7 @@
             <div id="slider-value3">0</div>
         </div>
         <div class="slider-btn">
-            <a href = "/dashboard" class="btn mx-5">Cancel</a>
+            <a href = "/dashboard/${monthId}" class="btn mx-5">Cancel</a>
             <input type="submit" value="Submit" class="btn submit-btn">
         </div>
     </form:form>
