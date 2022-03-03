@@ -75,26 +75,31 @@
                                             <img src="/images/addbutton.png" alt="addbutton" class="addbtn goalbtn">
                                         </a>
                                     </div>
-                                    <div class="goal-info mx-5">
-                                        <table
-                                            class="table table-borderless d-flex align-items-center justify-content-center">
-                                            <c:forEach var="goal" items="${month.getGoals()}">
-                                                <tr>
-                                                    <td class="goalList">
-                                                        <c:out value="${goal.description}" />
-                                                    </td>
-                                                    <td>
-                                                    <td>
-                                                        <form action="/goals/${goal.id}" method="post">
-                                                            <input type="hidden" name="_method" value="delete">
-                                                            <input type="submit" value="Delete"
-                                                                class="btn goal-deletebtn">
-                                                        </form>
-                                                    </td>
-                                                    </td>
-                                                </tr>
-                                            </c:forEach>
-                                        </table>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="goal-info mx-5 overflow-auto">
+                                            <table class="table table-borderless d-flex align-items-center justify-content-center">
+                                                <thead>
+                                                </thead>
+                                                <tbody>
+                                                    <c:forEach var="goal" items="${month.getGoals()}">
+                                                        <tr>
+                                                            <td class="goalList">
+                                                                <c:out value="${goal.description}" />
+                                                            </td>
+                                                            <td>
+                                                            <td>
+                                                                <form action="/goals/${goal.id}" method="post">
+                                                                    <input type="hidden" name="_method" value="delete">
+                                                                    <input type="submit" value="Delete"
+                                                                        class="btn goal-deletebtn">
+                                                                </form>
+                                                            </td>
+                                                            </td>
+                                                        </tr>
+                                                    </c:forEach>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
@@ -173,7 +178,7 @@
                                     <div class="mx-5 spend-container">
                                         <p class="expense-h4">You have --- left to spend this month.</p>
                                     </div>
-                                    <div class="mx-5 saving-container">
+                                    <div class="mx-5 saving-container overflow-auto">
                                         <table class="table table-hover budgetTable">
                                             <tr>
                                                 <th class="budget-th">Expenses</th>
