@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="accounts-tabs4">
-                    <h3 class="total-h3">Monthly Income: $${Math.floor(month.getMonthlyTotal())}</h3>
+                    <h3 class="total-h3">Monthly Income: $${monthlyTotal}</h3>
                 </div>
                 <div class="accounts-tabs">
                     <h3 class="savings-h3">Savings: $${Math.floor(month.getSavings().getTotal())}</h3>

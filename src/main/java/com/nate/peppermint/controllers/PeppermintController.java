@@ -73,6 +73,12 @@ public class PeppermintController {
         } else {
             User loggedInUser = userService.findOne(userId);
             model.addAttribute("loggedInUser", loggedInUser);
+            double monthlyTotal = (double) month.getMonthlyTotal();
+            int roundedTotal = (int) monthlyTotal;
+            model.addAttribute("monthlyTotal", roundedTotal);
+            double savingsTotal = (double) month.getSavings().getTotal();
+            int roundedMonthlyTotal = (int) savingsTotal;
+
             return "dashboard.jsp";
         }
     }
