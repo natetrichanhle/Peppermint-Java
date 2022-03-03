@@ -77,8 +77,15 @@ public class PeppermintController {
             int roundedTotal = (int) monthlyTotal;
             model.addAttribute("monthlyTotal", roundedTotal);
             double savingsTotal = (double) month.getSavings().getTotal();
-            int roundedMonthlyTotal = (int) savingsTotal;
-
+            int roundedSavingsTotal = (int) savingsTotal;
+            model.addAttribute("savingsTotal", roundedSavingsTotal);
+            double investmentTotal = (double) month.getInvestment().getTotalInvestments();
+            int roundedInvestmentTotal = (int) investmentTotal;
+            model.addAttribute("investmentTotal", roundedInvestmentTotal);
+            double utilitiesTotal = (double) (month.getSavings().getTotal()
+            - month.getInvestment().getTotalInvestments());
+            int roundedUtilitiesTotal = (int) utilitiesTotal;
+            model.addAttribute("utilitiesTotal", roundedUtilitiesTotal);
             return "dashboard.jsp";
         }
     }
