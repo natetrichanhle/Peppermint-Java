@@ -97,9 +97,25 @@
                 </div>
                 <div class="mx-5 d-flex justify-content-between">
                     <!-- render some shit here for investments -->
-                    <h3>Roth Ira:</h3>
-                    <h3>Stocks:</h3>
-                    <h3>Crypto:</h3>
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <h3>Roth Ira:</h3>
+                            <h3>Crypto:</h3>
+                            <h3>Stocks:</h3>
+                        </div>
+                    </div>
+                    <img class="pi-chart" src="https://quickchart.io/chart?c={
+                    type:'doughnut',
+                    data:{
+                    labels:['RothIRA','Stocks','Crypto'],
+                    datasets:[{
+                    data:[
+                        ${month.getInvestment().getRothIraAmount()},
+                        ${month.getInvestment().getStocksAmount()},
+                        ${month.getInvestment().getCryptoAmount()}]}]},
+                    options:{
+                        plugins:{doughnutlabel:{labels:[{text:'${Math.floor(month.getInvestment().getTotalInvestments())}',color:'white',
+                    font:{size:20}},{text:'total',color:'white'}]}}}}">
                 </div>
             </div>
         </div>
