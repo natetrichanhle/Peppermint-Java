@@ -125,9 +125,11 @@ public class PeppermintController {
             return "redirect:/";
         } else {
             Long monthId = (Long) session.getAttribute("monthId");
+            Month thisMonth = monthService.findMonth(monthId);
+            model.addAttribute("thisMonth", thisMonth);
+            model.addAttribute("monthId",monthId);
             Investment thisInvestmentAccount = investmentService.findInvestment(monthId);
             model.addAttribute("investment", thisInvestmentAccount);
-            model.addAttribute("monthId",monthId);
             User thisLoggedInUser = userService.findOne(userId);
             model.addAttribute("thisLoggedInUser",thisLoggedInUser);
             return "investmentForm.jsp";
@@ -146,6 +148,7 @@ public class PeppermintController {
             // All investments
             List<Investment> investments = investmentService.allInvestments();
             model.addAttribute("investments", investments);
+            System.out.println(result);
             return "investmentForm.jsp";
         } else {
             investmentService.createInvestment(investment);
