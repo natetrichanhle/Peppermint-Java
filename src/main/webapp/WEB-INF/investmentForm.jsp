@@ -25,22 +25,25 @@
 </head>
 <body>
     <!-- Enter body here -->
-    <form:form action="/investments/submit" method="POST" modelAttribute="investment">
-        <form:input type="hidden" path="month" value="${monthId}"/>
+    <form:form action="/investments/submit/${investment.getId()}" method="POST" modelAttribute="investment">
+        <input type="hidden" name="_method" value="put"/>
+        <form:input type="hidden" path="month" value= "${monthId}" />
+        <form:input type="hidden" path="totalInvestments" value= "${investment.getTotal()}" />
+
         <h1 class="d-flex justify-content-center">Add to your Investments</h1>
         <div class="container">
             <form:label path="rothIraAmount">RothIRA: </form:label>    
-            <form:input type="range" id="my-slider" min="0" max="100" value="50" oninput="slider()" path="rothIraAmount"/>
+            <form:input type="range" id="my-slider" min="0" max="100" value="${investment.getRothIraAmount()}" oninput="slider()" path="rothIraAmount"/>
             <div id="slider-value">0</div>
         </div>
         <div class="container2">    
             <form:label path="stocksAmount">Stocks: </form:label>    
-            <form:input type="range" id="my-slider2" min="0" max="100" value="50" oninput="slider2()" path="stocksAmount"/>
+            <form:input type="range" id="my-slider2" min="0" max="100" value="${investment.getStocksAmount()}" oninput="slider2()" path="stocksAmount"/>
             <div id="slider-value2">0</div>
         </div>
         <div class="container3">
             <form:label path="cryptoAmount">Crypto: </form:label>    
-            <form:input type="range" id="my-slider3" min="0" max="100" value="50" oninput="slider3()" path="cryptoAmount"/>
+            <form:input type="range" id="my-slider3" min="0" max="100" value="${investment.getCryptoAmount()}" oninput="slider3()" path="cryptoAmount"/>
             <div id="slider-value3">0</div>
         </div>
         <div class="slider-btn">

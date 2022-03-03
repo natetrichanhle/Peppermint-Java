@@ -9,6 +9,7 @@ import com.nate.peppermint.models.Budget;
 import com.nate.peppermint.models.Goal;
 import com.nate.peppermint.models.Investment;
 import com.nate.peppermint.models.Month;
+import com.nate.peppermint.models.SavingsAccount;
 import com.nate.peppermint.models.User;
 import com.nate.peppermint.services.BudgetService;
 import com.nate.peppermint.services.GoalService;
@@ -26,6 +27,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 @Controller
 public class PeppermintController {
@@ -132,7 +134,7 @@ public class PeppermintController {
         }
     }
 
-    @PostMapping("/investments/submit")
+    @PutMapping("/investments/submit/{id}")
     public String createInvestment(@Valid @ModelAttribute("investment") Investment investment, BindingResult result, Model model, HttpSession session){
         if(investment.getRothIraAmount() + investment.getStocksAmount() + investment.getCryptoAmount() != 100){
 			result.addError(new ObjectError("stocksAmount", "Values must equal 100"));
@@ -179,7 +181,9 @@ public class PeppermintController {
         } else {
             Long monthId = (Long) session.getAttribute("monthId");
             Month month = monthService.findMonth(monthId);
-            budgetService.createBudget(budget, month.getSavings());
+            SavingsAccount thisSavingsAccount = month.getSavings();
+            System.out.println(thisSavingsAccount);
+            budgetService.createBudget(budget, thisSavingsAccount);
             return "redirect:/dashboard/" + session.getAttribute("monthId");
         }
     }

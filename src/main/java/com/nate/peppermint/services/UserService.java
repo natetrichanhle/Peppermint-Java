@@ -78,6 +78,7 @@ public class UserService {
                 Double savingsTotal = newMonth.getMonthlyTotal() * (newMonth.getSavingsPercentage() / 100);
                 SavingsAccount newSavings = savingsService.createSavings(new SavingsAccount());
                 newSavings.setTotal(savingsTotal);
+                newSavings.setTotalExpenses(0.0);
                 newSavings.setMonth(newMonth);
                 savingsService.createSavings(newSavings);
             }
