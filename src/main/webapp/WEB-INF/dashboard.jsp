@@ -75,7 +75,7 @@
                         <img src="/images/addbutton.png" alt="addbutton" class="addbtn goalbtn">
                     </a>
                 </div>
-                <div class="goal-info mx-5">
+                <div class="goal-info mx-5 overflow-auto">
                     <table
                         class="table table-borderless d-flex align-items-center justify-content-center">
                         <c:forEach var="goal" items="${month.getGoals()}">
@@ -172,7 +172,7 @@
                 <div class="mx-5 spend-container">
                     <p class="expense-h4">You have --- left to spend this month.</p>
                 </div>
-                <div class="mx-5 saving-container">
+                <div class="mx-5 saving-container overflow-auto">
                     <table class="table table-hover budgetTable">
                         <tr>
                             <th class="budget-th">Expenses</th>
