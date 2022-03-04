@@ -253,3 +253,30 @@
     border: 2px solid black;
     box-shadow: 10px 10px 20px #888888;
 }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #3c3c3c;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropbtn{
+    padding: 4px;
+    background-color: #9e1a2c ;
+    color: white;
+    border-radius: 5px;
+}

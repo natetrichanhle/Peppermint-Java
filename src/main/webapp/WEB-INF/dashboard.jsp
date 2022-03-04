@@ -26,6 +26,7 @@
     <!-- JS for rendering chart -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     </script>
+
 </head>
 
 
@@ -40,28 +41,29 @@
                     <div>
                         <h1 class="month-head">${month.getMonthOfYear()}</h1>
                     </div>
-                    <div>
-                        <select name="month-dropdown">
+                    <div class="dropdown">
+                        <button class="dropbtn">Change Month</button>
+                        <div class="dropdown-content">
                             <c:forEach var="m" items="${loggedInUser.getMonths()}">
-                                <option>
+                                <a class= "btn m-1" href="/dashboard/${m.getId()}">
                                     <c:out value="${m.getMonthOfYear()}" />
-                                </option>
+                                </a>
                             </c:forEach>
-                        </select>
+                        </div>
                     </div>
                 </div>
-                <div class="accounts-tabs4">
+                <div class="accounts-tabs4 rounded-3 border">
                     <h3 class="total-h3">Monthly Income: $${monthlyTotal}</h3>
                 </div>
-                <div class="accounts-tabs">
+                <div class="accounts-tabs rounded-3 border">
                     <h3 class="savings-h3">Savings: $${savingsTotal}
                     </h3>
                 </div>
-                <div class="accounts-tabs2">
+                <div class="accounts-tabs2 rounded-3 border">
                     <h3 class="investments-h3">Investments:
                         $${investmentTotal}</h3>
                 </div>
-                <div class="accounts-tabs3">
+                <div class="accounts-tabs3 rounded-3 border">
                     <h3 class="utilities-h3">Utilities: $${utilitiesTotal}</h3>
                 </div>
             </div>
