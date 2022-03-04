@@ -33,6 +33,10 @@
 <body class="bg-dark">
     <div class="navbar logo">
         <img src="/images/peppermint.png" alt="logo" class="w-25">
+        <div>
+            <a href="/landing" class="btn">Back</a>
+            <a href="/logout" class="btn">Logout</a>
+        </div>
     </div>
     <div class="container d-flex">
         <div class="accounts-container rounded-3 box-shadow border-dark">
@@ -172,7 +176,13 @@
             </div>
             <div class="mx-5 d-flex justify-content-evenly">
                 <div class="mx-5 spend-container">
-                    <p class="expense-h4">You have --- left to spend this month.</p>
+                    <p class="expense-h4">You have $${expenseTotal} left to spend this month.</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar"
+                        aria-valuenow="${savingsProgression}" aria-valuemin="0" aria-valuemax="100" style="width:${savingsProgression}%">
+                        ${savingsProgression}%
+                        </div>
+                    </div>
                 </div>
                 <div class="mx-5 saving-container overflow-auto">
                     <table class="table table-hover budgetTable">

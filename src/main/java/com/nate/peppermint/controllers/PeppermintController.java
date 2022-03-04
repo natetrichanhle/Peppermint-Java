@@ -73,28 +73,43 @@ public class PeppermintController {
         } else {
             User loggedInUser = userService.findOne(userId);
             model.addAttribute("loggedInUser", loggedInUser);
+            // Monthly Total
             double monthlyTotal = (double) month.getMonthlyTotal();
             int roundedTotal = (int) monthlyTotal;
             model.addAttribute("monthlyTotal", roundedTotal);
+            // Savings Total
             double savingsTotal = (double) month.getSavings().getTotal();
             int roundedSavingsTotal = (int) savingsTotal;
             model.addAttribute("savingsTotal", roundedSavingsTotal);
+            // Investment Total
             double investmentTotal = (double) month.getInvestment().getTotalInvestments();
             int roundedInvestmentTotal = (int) investmentTotal;
             model.addAttribute("investmentTotal", roundedInvestmentTotal);
+            // Utilities Total
             double utilitiesTotal = (double) (month.getSavings().getTotal()
             - month.getInvestment().getTotalInvestments());
             int roundedUtilitiesTotal = (int) utilitiesTotal;
             model.addAttribute("utilitiesTotal", roundedUtilitiesTotal);
+            // Roth Ira Percentage
             double rothIraTotal = (double) (month.getInvestment().getTotalInvestments() * month.getInvestment().getRothIraAmount()) / 100 ;
             int roundedRothIraTotal = (int) rothIraTotal;
             model.addAttribute("rothIraTotal", roundedRothIraTotal);
+            // Crypto Percentage
             double cryptoTotal = (double) (month.getInvestment().getTotalInvestments() * month.getInvestment().getCryptoAmount()) / 100 ;
             int roundedCryptoTotal = (int) cryptoTotal;
             model.addAttribute("cryptoTotal", roundedCryptoTotal);
+            // Stocks Percentage
             double stocksTotal = (double) (month.getInvestment().getTotalInvestments() * month.getInvestment().getStocksAmount()) / 100 ;
             int roundedStocksTotal = (int) stocksTotal;
             model.addAttribute("stocksTotal", roundedStocksTotal);
+            // Savings Progression (progress bar)
+            double savingsProgression = (double) (month.getSavings().getTotalExpenses() / month.getSavings().getTotal()) * 100;
+            int roundedSavingsProgression = (int) savingsProgression;
+            model.addAttribute("savingsProgression", roundedSavingsProgression);
+            // Total Expenses
+            double expenseTotal = (double) month.getSavings().getTotal() - month.getSavings().getTotalExpenses();
+            int roundedExpenseTotal = (int) expenseTotal;
+            model.addAttribute("expenseTotal", roundedExpenseTotal);
             return "dashboard.jsp";
         }
     }
@@ -195,6 +210,11 @@ public class PeppermintController {
 
     @PostMapping("/budgets/submit")
     public String createBudget(@Valid @ModelAttribute("budget") Budget budget, BindingResult result, Model model, HttpSession session){
+        Long monthId = (Long) session.getAttribute("monthId");
+        Month month = monthService.findMonth(monthId);
+        if(month.getSavings().getTotal() < (month.getSavings().getTotalExpenses() + budget.getAmount())){
+			result.addError(new ObjectError("overdraft", "FOO YOU AINT EVEN GOT THIS MUCH MONEY!"));
+		}
         if(result.hasErrors()){
             Long userId = (Long) session.getAttribute("user_id");
             User thisLoggedInUser = userService.findOne(userId);
@@ -204,8 +224,6 @@ public class PeppermintController {
             model.addAttribute("budgets", budgets);
             return "budgetForm.jsp";
         } else {
-            Long monthId = (Long) session.getAttribute("monthId");
-            Month month = monthService.findMonth(monthId);
             SavingsAccount thisSavingsAccount = month.getSavings();
             System.out.println(thisSavingsAccount);
             budgetService.createBudget(budget, thisSavingsAccount);

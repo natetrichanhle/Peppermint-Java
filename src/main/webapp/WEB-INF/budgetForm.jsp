@@ -27,18 +27,17 @@
     <div class="container">    
         <h1>Add to your Expenses</h1>
         <form:form action="/budgets/submit" method="POST" modelAttribute="budget">
+        <form:errors path="*" class="text-danger d-flex justify-content-center"/>
             <form:input type="hidden" path="savingsAccount" value="${monthId}"/>
             <div class="mb-3">
-                <form:label path="category" for="formInput" class="form-label">What are you budgeting for?:
+                <form:label path="category" for="formInput" class="form-label">What did you buy?:
                 </form:label>
                 <form:input type="text" class="form-control" id="formInput" path="category" placeholder="" />
-                <form:errors path="category" class="text-danger" />
             </div>
             <div class="mb-3">
                 <form:label path="amount" for="formInput" class="form-label">Amount:
                 </form:label>
                 <form:input type="text" class="form-control" id="formInput" path="amount" placeholder="" />
-                <form:errors path="amount" class="text-danger" />
             </div>
             <div class="d-flex justify-content-end">
                 <a href = "/dashboard/${monthId}" class="btn mx-5">Cancel</a>
