@@ -26,19 +26,19 @@
     <!-- JS for rendering chart -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     </script>
-
 </head>
 
 
 <body class="bg-dark">
-    <div class="navbar logo">
-        <img src="/images/peppermint.png" alt="logo" class="w-25">
+    <div class="container">
+    <div class="container d-flex align-items-center justify-content-between">
+        <img src="/images/peppermint.png" alt="logo" class="w-50">
         <div>
             <a href="/landing" class="btn">Back</a>
             <a href="/logout" class="btn">Logout</a>
         </div>
     </div>
-    <div class="container d-flex">
+    <div class="container d-flex pr-0">
         <div class="accounts-container rounded-3 box-shadow border-dark">
             <div class="accounts">
                 <div class="d-flex justify-content-center align-items-center month-container">
@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class="accounts-tabs4 rounded-3 border-dark box-shadow">
-                    <h3 class="total-h3">Monthly Income: $${monthlyTotal}</h3>
+                    <h3 class="total-h3 color-white">Monthly Income: $${monthlyTotal}</h3>
                 </div>
                 <div class="accounts-tabs rounded-3 border-dark">
                     <h3 class="savings-h3">Savings: $${savingsTotal}
@@ -115,9 +115,9 @@
                     <!-- render some shit here for investments -->
                     <div class="d-flex align-items-center">
                         <div>
-                            <h3>Roth Ira: $${rothIraTotal}</h3>
-                            <h3>Crypto: $${cryptoTotal}</h3>
-                            <h3>Stocks: $${stocksTotal}</h3>
+                            <h3 class="text-white">Roth Ira: $${rothIraTotal}</h3>
+                            <h3 class="text-white">Crypto: $${cryptoTotal}</h3>
+                            <h3 class="text-white">Stocks: $${stocksTotal}</h3>
                         </div>
                     </div>
                     <div>
@@ -175,7 +175,7 @@
                 </a>
             </div>
             <div class="mx-5 d-flex justify-content-evenly">
-                <div class="mx-5 spend-container">
+                <div class="mx-5 spend-container text-center">
                     <p class="expense-h4">You have $${expenseTotal} left to spend this month.</p>
                     <div class="progress">
                         <div class="progress-bar progress-bar-striped active" role="progressbar"
@@ -213,5 +213,6 @@
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>

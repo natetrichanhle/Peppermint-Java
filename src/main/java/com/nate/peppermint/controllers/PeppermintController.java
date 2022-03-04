@@ -212,9 +212,11 @@ public class PeppermintController {
     public String createBudget(@Valid @ModelAttribute("budget") Budget budget, BindingResult result, Model model, HttpSession session){
         Long monthId = (Long) session.getAttribute("monthId");
         Month month = monthService.findMonth(monthId);
-        if(month.getSavings().getTotal() < (month.getSavings().getTotalExpenses() + budget.getAmount())){
-			result.addError(new ObjectError("overdraft", "FOO YOU AINT EVEN GOT THIS MUCH MONEY!"));
-		}
+        if(budget.getAmount() != null){
+            if( month.getSavings().getTotal() < (month.getSavings().getTotalExpenses() + budget.getAmount())){
+                result.addError(new ObjectError("overdraft", "FOO YOU AINT EVEN GOT THIS MUCH MONEY!"));
+            }
+        }
         if(result.hasErrors()){
             Long userId = (Long) session.getAttribute("user_id");
             User thisLoggedInUser = userService.findOne(userId);

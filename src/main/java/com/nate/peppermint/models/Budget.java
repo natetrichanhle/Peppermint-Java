@@ -24,10 +24,10 @@ public class Budget {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    @NotNull()
     private String category;
 
-    @NotNull
+    @NotNull(message = "Must Enter An Amount")
     private Double amount;
 
     // M : 1 with SavingsAccount

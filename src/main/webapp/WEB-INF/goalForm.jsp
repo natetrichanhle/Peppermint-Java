@@ -22,20 +22,29 @@
     <!-- YOUR own local JS -->
     <script type="text/javascript" src="/js/app.js"></script>
 </head>
-<body>
-    <!-- Enter body here -->
-    <div class="container">    
-        <h1>Add to your Goals</h1>
-        <form:form action="/goals/submit" method="POST" modelAttribute="goal">
+
+
+
+<body class="bg-dark">
+    <div class="container d-flex align-items-center justify-content-between">
+        <img src="/images/peppermint.png" alt="logo" class="w-50">
+        <div>
+            <a href = "/dashboard/${monthId}" class="btn">Back</a>
+            <a href="/logout" class="btn">Logout</a>
+        </div>
+    </div>  
+    <div class="p-3 container text-center d-flex-column align-items-center form-card box-shadow rounded-3">    
+        <h1 class="text-white">Add to your Goals</h1>
+        <form:form class="p-3" action="/goals/submit" method="POST" modelAttribute="goal">
             <form:input type="hidden" path="month" value="${monthId}"/>
             <div class="mb-3">
-                <form:label path="description" for="formInput" class="form-label">Description:
+                <form:label path="description" for="formInput" class="form-label text-white">What is your Goal:
                 </form:label>
                 <form:input type="text" class="form-control" id="formInput" path="description" placeholder="" />
                 <form:errors path="description" class="text-danger" />
             </div>
-            <div class="d-flex justify-content-end">
-                <a href = "/dashboard/${monthId}" class="btn mx-5">Cancel</a>
+            <div class="d-flex justify-content-around mt-5">
+                <a href = "/dashboard/${monthId}" class="btn">Cancel</a>
                 <input type="submit" value="Submit" class="btn submit-btn">
             </div>
         </form:form>

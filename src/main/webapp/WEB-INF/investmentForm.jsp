@@ -31,7 +31,7 @@
         <form:input type="hidden" path="totalInvestments" value= "${investment.getTotalInvestments()}" />
         
         
-        <h1 class="d-flex justify-content-center text-white">Investments</h1>
+        <h1 class="d-flex justify-content-center text-white">Update the Percentage of your Investments</h1>
         <form:errors path="*" class="text-danger d-flex justify-content-center"/>
         <div class="container">
             <form:label path="rothIraAmount">RothIRA: </form:label>    

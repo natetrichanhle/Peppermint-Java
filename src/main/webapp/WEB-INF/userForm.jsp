@@ -23,72 +23,21 @@
     <script type="text/javascript" src="/js/app.js"></script>
 </head>
 <body>
-    <!-- Enter body here -->
-    <!-- <div class="login-reg-main border-round give-me-space-up-down mx-5">
-        <img src="/images/peppermint.png" alt="logo" class="w-25">
-        <h3>Register:</h3>
-        <form:form action="/register" method="post" modelAttribute="newUser">
-            <div class="form-group">
-                <label>Name:</label>
-                <form:input path="name" class="form-control" />
-                <form:errors path="name" class="text-danger" />
-            </div>
-            <div class="form-group">
-                <label>Annual Income:</label>
-                <form:input type="number" min="13920" path="annualIncome" class="form-control" />
-                <form:errors path="annualIncome" class="text-danger" />
-            </div>
-            <div class="form-group">
-                <label>Email:</label>
-                <form:input path="email" class="form-control" />
-                <form:errors path="email" class="text-danger" />
-            </div>
-            <div class="form-group">
-                <label>Password:</label>
-                <form:password path="password" class="form-control" />
-                <form:errors path="password" class="text-danger" />
-            </div>
-            <div class="form-group">
-                <label>Confirm Password:</label>
-                <form:password path="confirm" class="form-control" />
-                <form:errors path="confirm" class="text-danger" />
-            </div>
-            <input type="submit" value="Register" class="btn" />
-        </form:form>
-    </div> -->
-
-    <!-- LOGIN -->
-    <!-- newLogin object will touch the model to validate only -->
-    <!-- <div class="login-reg-main border-round mx-5">
-        <h3>Login:</h3>
-        <form:form action="/login" method="post" modelAttribute="newLogin">
-            <div class="form-group">
-                <label>Email:</label>
-                <form:input path="email" class="form-control" />
-                <form:errors path="email" class="text-danger" />
-            </div>
-            <div class="form-group">
-                <label>Password:</label>
-                <form:password path="password" class="form-control" />
-                <form:errors path="password" class="text-danger" />
-            </div>
-            <input type="submit" value="Login" class="btn" />
-        </form:form>
-    </div> -->
-
-	<div class="section">
-		<div class="container">
-			<div class="row full-height justify-content-center">
-				<div class="col-12 text-center align-self-center py-5">
-					<div class="section pb-5 pt-5 pt-sm-2 text-center">
-						<h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
-			          	<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
-			          	<label for="reg-log"></label>
+    
+    <div class="section">
+        <div class="container">
+                <img src="/images/peppermint.png" alt="logo" class="w-50">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center align-self-center">
+                    <div class="section pb-5 pt-sm-2 text-center">
+                        <h6 class="mb-0 pb-3"><span>Sign Up</span><span>Log In </span></h6>
+                        <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                        <label for="reg-log"></label>
 						<div class="card-3d-wrap mx-auto">
-							<div class="card-3d-wrapper">
-								<div class="card-front">
-									<div class="center-wrap">
-										<div class="section text-center">
+                            <div class="card-3d-wrapper">
+                                <div class="card-back">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
                                             <form:form action="/login" method="post" modelAttribute="newLogin">
                                                 <div class="form-group">
                                                     <label>Email:</label>
@@ -102,51 +51,103 @@
                                                 </div>
                                                 <input type="submit" value="Login" class="btn" />
                                             </form:form>
-				      					</div>
-			      					</div>
-			      				</div>
-								<div class="card-back">
-									<div class="center-wrap">
-										<div class="section text-center">
-											<form:form action="/register" method="post" modelAttribute="newUser">
-                                            <div class="form-group">
-                                                <label>Name:</label>
-                                                <form:input path="name" class="form-style"/>
-                                                <form:errors path="name" class="text-danger" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Annual Income:</label>
-                                                <form:input type="number" min="13920" path="annualIncome" class="form-style" />
-                                                <form:errors path="annualIncome" class="text-danger" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Email:</label>
-                                                <form:input path="email" class="form-style" />
-                                                <form:errors path="email" class="text-danger" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Password:</label>
-                                                <form:password path="password" class="form-style" />
-                                                <form:errors path="password" class="text-danger" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Confirm Password:</label>
-                                                <form:password path="confirm" class="form-style" />
-                                                <form:errors path="confirm" class="text-danger" />
-                                            </div>
-                                            <input type="submit" value="Register" class="btn" />
+                                        </div>
+                                    </div>
+                                </div>
+								<div class="card-front">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <form:form action="/register" method="post" modelAttribute="newUser">
+                                                <div class="form-group">
+                                                    <label>Name:</label>
+                                                    <form:input path="name" class="form-style"/>
+                                                    <form:errors path="name" class="text-danger" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Annual Income:</label>
+                                                    <form:input type="number" min="13920" path="annualIncome" class="form-style" />
+                                                    <form:errors path="annualIncome" class="text-danger" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Email:</label>
+                                                    <form:input path="email" class="form-style" />
+                                                    <form:errors path="email" class="text-danger" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Password:</label>
+                                                    <form:password path="password" class="form-style" />
+                                                    <form:errors path="password" class="text-danger" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Confirm Password:</label>
+                                                    <form:password path="confirm" class="form-style" />
+                                                    <form:errors path="confirm" class="text-danger" />
+                                                </div>
+                                                <input type="submit" value="Register" class="btn" />
                                             </form:form>
-				      					</div>
-			      					</div>
-			      				</div>
-			      			</div>
-			      		</div>
-			      	</div>
-		      	</div>
-	      	</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 	    </div>
-	</div>
-
+    </div>
+    
 </div>
 </body>
 </html>
+<!-- Enter body here -->
+<!-- <div class="login-reg-main border-round give-me-space-up-down mx-5">
+    <img src="/images/peppermint.png" alt="logo" class="w-25">
+    <h3>Register:</h3>
+    <form:form action="/register" method="post" modelAttribute="newUser">
+        <div class="form-group">
+            <label>Name:</label>
+            <form:input path="name" class="form-control" />
+            <form:errors path="name" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <label>Annual Income:</label>
+            <form:input type="number" min="13920" path="annualIncome" class="form-control" />
+            <form:errors path="annualIncome" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            <form:input path="email" class="form-control" />
+            <form:errors path="email" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <label>Password:</label>
+            <form:password path="password" class="form-control" />
+            <form:errors path="password" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <label>Confirm Password:</label>
+            <form:password path="confirm" class="form-control" />
+            <form:errors path="confirm" class="text-danger" />
+        </div>
+        <input type="submit" value="Register" class="btn" />
+    </form:form>
+</div> -->
+
+<!-- LOGIN -->
+<!-- newLogin object will touch the model to validate only -->
+<!-- <div class="login-reg-main border-round mx-5">
+    <h3>Login:</h3>
+    <form:form action="/login" method="post" modelAttribute="newLogin">
+        <div class="form-group">
+            <label>Email:</label>
+            <form:input path="email" class="form-control" />
+            <form:errors path="email" class="text-danger" />
+        </div>
+        <div class="form-group">
+            <label>Password:</label>
+            <form:password path="password" class="form-control" />
+            <form:errors path="password" class="text-danger" />
+        </div>
+        <input type="submit" value="Login" class="btn" />
+    </form:form>
+</div> -->

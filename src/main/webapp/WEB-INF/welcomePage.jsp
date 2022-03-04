@@ -22,7 +22,7 @@
     <!-- YOUR own local JS -->
     <script type="text/javascript" src="/js/app.js"></script>
 </head>
-<body>
+<body class="bg-dark">
     <!-- Enter body here -->
     <div class="navbar mx-5">    
         <img src="/images/peppermint.png" alt="logo" class="w-25">
@@ -32,11 +32,11 @@
         <img src="/images/welcomepage.png" alt="logo" class="w-100">
     </div>
     <div class="info-container">
-        <div class="info w-25">
+        <div class="info w-25 text-white">
             <img src="/images/budgetplanner.png" alt="logo">
             <p class="info-desc">Say goodbye to spreadsheets with customizable budgets. Easily add and update your categories.</p>
         </div>
-        <div class="info w-25">
+        <div class="info w-25 text-white">
             <img src="/images/trackspending.png" alt="logo">
             <p class="info-desc">Stay on top of your finances by seeing where your money comes and goes.</p>
         </div>
@@ -45,7 +45,7 @@
         <div class="w-25">
             <img class="goalimg" src="/images/goals.png" alt="logo">
         </div>
-        <div class="info w-50">
+        <div class="info w-50 text-white">
             <h1 class="goalhead">Stay focused on your financial goals</h1>
             <p class="goaldesc">Improve your spending habits with custom goals that keep you <br>
             going. Save for a home, conquer debt, and prepare for the future.</p>

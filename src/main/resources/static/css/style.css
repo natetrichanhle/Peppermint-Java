@@ -9,7 +9,9 @@
     background-color: #9e1a2c;
     color:white;
 }
-
+.text-white{
+    color: white;
+}
 .info{
     align-items: center;
 }
@@ -68,7 +70,7 @@
 /* Dashboard page */
 
 .accounts-container{
-    background-color: slategray;
+    background-image: url("/images/greyPattern.png");
     flex:3;
     height: 700px;
     display: flex;
@@ -83,16 +85,16 @@
 .budget-container{
     height:350px;
     margin: 50px 0px;
-    background-color: slategray
+    background-image: url("/images/greyPattern.png");
 }
 
 .goals{
-    background-color: #9e1a2c;
+    background-image: url("/images/peppermints.jpeg");
     height:325px;
 }
 
 .investments{
-    background-color: #9e1a2c;
+    background-image: url("/images/peppermints.jpeg");
     height:325px;
     margin-top: 50px;
 }
@@ -283,4 +285,11 @@
 
 .progress-bar{
     background-color: #9e1a2c;
+}
+
+/*forms*/
+.form-card{
+    width: 300px;
+    height: auto;
+    background-image: url("/images/peppermints.jpeg");
 }

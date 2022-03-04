@@ -15,6 +15,7 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -25,6 +26,7 @@ public class Goal {
     private Long id;
 
     @NotNull
+    @Length(min=3)
     private String description;
 
     @NotNull

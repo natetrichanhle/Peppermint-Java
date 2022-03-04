@@ -31,26 +31,31 @@
     <!-- YOUR own local JS -->
     <script type="text/javascript" src="/js/app.js"></script>
 </head>
-<body>
+<body class= "bg-dark">
     <div class="container">
+
     <div class="navbar logo">    
-        <img src="/images/peppermint.png" alt="logo" class="w-25">
+        <img src="/images/peppermint.png" alt="logo" class="w-50">
+        <div>
+            <a href="/logout" class="btn">Logout</a>
+        </div>
     </div>
     <!-- Enter body here -->
-    <div class="container mx-auto"> 
-        <h2>Welcome, <c:out value="${loggedInUser.getName()}"/></h2>
+    <div class="container mx-auto text-center"> 
+        <h2 class="text-white">Welcome, <c:out value="${loggedInUser.getName()}"/></h2>
         <div>
-            <p>Gone are the days when people use to only rely on their 
+            <p class="text-white">Gone are the days when people use to only rely on their 
                 savings for future security. In today's world, savings 
                 may not be adequate to ensure financial safety. Idle 
                 money kept in your savings bank account or locker 
                 may also not serve the purpose. That is because of two reasons 
                 one, the idle cash in your bank account is an opportunity 
                 loss as it is not capable of earning more money, and second,
-                it does not have the potential to beat inflation. Use our site
-                to help make good decescions on how much of your money goes where every month.
+                it does not have the potential to beat inflation.
             </p>
         </div>
+        <h4 class="text-white"> Use our site
+            to help make good decescions on how much of your money goes where every month</h4>
     </div>
     <!-- Carousel ------------------------------------------------ -->
     
@@ -60,7 +65,7 @@
                 <div class="owl-carousel owl-theme">
                     <div class="item mb-4">
                         <div class="card border-0 shadow">
-                            <a href="/dashboard/${loggedInUser.getMonths()[0].getId()}"><img src="/images/1.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[0].getId()}"><img src="/images/pep2.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>January</h4>
@@ -71,7 +76,7 @@
                     
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href="/dashboard/${loggedInUser.getMonths()[1].getId()}"><img src="/images/2.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[1].getId()}"><img src="/images/pep1.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>Februrary</h4>
@@ -81,7 +86,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href="/dashboard/${loggedInUser.getMonths()[2].getId()}"><img src="/images/3.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[2].getId()}"><img src="/images/pep7.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>March</h4>
@@ -91,7 +96,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href="/dashboard/${loggedInUser.getMonths()[3].getId()}"><img src="/images/4.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[3].getId()}"><img src="/images/pep4.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>April</h4>
@@ -101,7 +106,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href="/dashboard/${loggedInUser.getMonths()[4].getId()}"><img src="/images/5.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[4].getId()}"><img src="/images/pep5.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>May</h4>
@@ -111,7 +116,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href="/dashboard/${loggedInUser.getMonths()[5].getId()}"><img src="/images/6.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[5].getId()}"><img src="/images/pep6.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>June</h4>
@@ -121,7 +126,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href="/dashboard/${loggedInUser.getMonths()[6].getId()}"><img src="/images/7.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[6].getId()}"><img src="/images/pep3.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>July</h4>
@@ -131,7 +136,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href="/dashboard/${loggedInUser.getMonths()[7].getId()}"><img src="/images/8.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[7].getId()}"><img src="/images/pep8.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>August</h4>
@@ -141,7 +146,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href="/dashboard/${loggedInUser.getMonths()[8].getId()}"><img src="/images/9.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[8].getId()}"><img src="/images/pep9.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>September</h4>
@@ -151,7 +156,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href="/dashboard/${loggedInUser.getMonths()[9].getId()}"><img src="/images/10.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[9].getId()}"><img src="/images/pep10.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>October</h4>
@@ -161,7 +166,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href="/dashboard/${loggedInUser.getMonths()[10].getId()}"><img src="/images/11.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[10].getId()}"><img src="/images/pep11.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>November</h4>
@@ -171,7 +176,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href="/dashboard/${loggedInUser.getMonths()[11].getId()}"><img src="/images/12.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[11].getId()}"><img src="/images/pep12.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>December</h4>
@@ -212,5 +217,6 @@
             }
         })
     </script>
+    </div>
 </body>
 </html>

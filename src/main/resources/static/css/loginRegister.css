@@ -125,6 +125,7 @@ h6 span{
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
 }
+
 .card-back {
     transform: rotateY(180deg);
 }

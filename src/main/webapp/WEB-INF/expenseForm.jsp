@@ -22,7 +22,7 @@
     <!-- YOUR own local JS -->
     <script type="text/javascript" src="/js/app.js"></script>
 </head>
-<body>
+<body class="bg-dark">
     <!-- Enter body here -->
     <div class="login-reg-main border-round give-me-space-up-down mx-5">
         <img src="/images/peppermint.png" alt="logo" class="w-25">
