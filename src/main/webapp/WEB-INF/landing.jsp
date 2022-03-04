@@ -32,11 +32,12 @@
     <script type="text/javascript" src="/js/app.js"></script>
 </head>
 <body>
+    <div class="container">
     <div class="navbar logo">    
         <img src="/images/peppermint.png" alt="logo" class="w-25">
     </div>
     <!-- Enter body here -->
-    <div class="container mx-auto p-5"> 
+    <div class="container mx-auto"> 
         <h2>Welcome, <c:out value="${loggedInUser.getName()}"/></h2>
         <div>
             <p>Gone are the days when people use to only rely on their 
@@ -50,19 +51,16 @@
                 to help make good decescions on how much of your money goes where every month.
             </p>
         </div>
-        <c:forEach var = "i" items="${loggedInUser.getMonths()}">
-            <a href="/dashboard/${i.getId()}"><c:out value = "${i.getMonthOfYear()}"/></a>
-        </c:forEach>      
     </div>
     <!-- Carousel ------------------------------------------------ -->
-
+    
     <div class="container-fluid my-5">
         <div class="row">
             <div class="col-12 m-auto">
                 <div class="owl-carousel owl-theme">
                     <div class="item mb-4">
                         <div class="card border-0 shadow">
-                            <a href="/dashboard/1"><img src="/images/1.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[0].getId()}"><img src="/images/1.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>January</h4>
@@ -70,10 +68,10 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href=""><img src="/images/2.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[1].getId()}"><img src="/images/2.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>Februrary</h4>
@@ -83,7 +81,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href=""><img src="/images/3.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[2].getId()}"><img src="/images/3.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>March</h4>
@@ -93,7 +91,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href=""><img src="/images/4.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[3].getId()}"><img src="/images/4.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>April</h4>
@@ -103,7 +101,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href=""><img src="/images/5.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[4].getId()}"><img src="/images/5.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>May</h4>
@@ -113,7 +111,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href=""><img src="/images/6.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[5].getId()}"><img src="/images/6.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>June</h4>
@@ -123,7 +121,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href=""><img src="/images/7.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[6].getId()}"><img src="/images/7.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>July</h4>
@@ -133,7 +131,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href=""><img src="/images/8.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[7].getId()}"><img src="/images/8.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>August</h4>
@@ -143,7 +141,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href=""><img src="/images/9.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[8].getId()}"><img src="/images/9.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>September</h4>
@@ -153,7 +151,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href=""><img src="/images/10.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[9].getId()}"><img src="/images/10.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>October</h4>
@@ -163,7 +161,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href=""><img src="/images/11.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[10].getId()}"><img src="/images/11.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>November</h4>
@@ -173,7 +171,7 @@
                     </div>
                     <div class="item">
                         <div class="card border-0 shadow">
-                            <a href=""><img src="/images/12.jpeg" alt="" class="card-img-top"></a>
+                            <a href="/dashboard/${loggedInUser.getMonths()[11].getId()}"><img src="/images/12.jpeg" alt="" class="card-img-top"></a>
                             <div class="card-body">
                                 <div class="card-title text-center">
                                     <h4>December</h4>
@@ -185,7 +183,7 @@
             </div>
         </div>
     </div>
-
+</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
