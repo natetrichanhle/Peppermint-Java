@@ -30,10 +30,10 @@
         <form:input type="hidden" path="month" value= "${monthId}" />
         <form:input type="hidden" path="totalInvestments" value= "${investment.getTotalInvestments()}" />
         
-
-        <h1 class="d-flex justify-content-center">Add to your Investments</h1>
+        
+        <h1 class="d-flex justify-content-center text-white">Investments</h1>
+        <form:errors path="*" class="text-danger d-flex justify-content-center"/>
         <div class="container">
-            <form:errors path="*"/>
             <form:label path="rothIraAmount">RothIRA: </form:label>    
             <form:input type="range" id="my-slider" min="0" max="100" value="${investment.getRothIraAmount()}" oninput="slider()" path="rothIraAmount"/>
             <div id="slider-value">0</div>
