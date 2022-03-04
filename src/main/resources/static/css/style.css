@@ -62,15 +62,10 @@
 
 .saving-container{
     width: 648px;
-    height: 280px;
+    height: 250px;
 }
 
 /* Dashboard page */
-
-.logo{
-    display: flex;
-    justify-content: center;
-}
 
 .accounts-container{
     background-color: #3c3c3c;
@@ -141,7 +136,7 @@
 
 .goal-info{
     width: 630px;
-    height: 250px;
+    height: 220px;
 }
 
 .investbtn{
@@ -281,4 +276,8 @@
     background-color: #9e1a2c ;
     color: white;
     border-radius: 5px;
+}
+
+.progress-bar{
+    background-color: #9e1a2c;
 }
