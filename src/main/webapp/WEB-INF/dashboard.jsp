@@ -77,7 +77,7 @@
                         <img src="/images/addbutton.png" alt="addbutton" class="addbtn goalbtn">
                     </a>
                 </div>
-                <div class="goal-info mx-5">
+                <div class="goal-info mx-5 overflow-auto">
                     <table
                         class="table table-borderless d-flex align-items-center justify-content-center">
                         <c:forEach var="goal" items="${month.getGoals()}">
@@ -89,7 +89,7 @@
                                 <td>
                                     <form action="/goals/${goal.id}" method="post">
                                         <input type="hidden" name="_method" value="delete">
-                                        <input type="submit" value="Delete"
+                                        <input type="submit" value="Complete"
                                             class="btn goal-deletebtn">
                                     </form>
                                 </td>
@@ -111,9 +111,9 @@
                     <!-- render some shit here for investments -->
                     <div class="d-flex align-items-center">
                         <div>
-                            <h3>Roth Ira:</h3>
-                            <h3>Crypto:</h3>
-                            <h3>Stocks:</h3>
+                            <h3>Roth Ira: $${rothIraTotal}</h3>
+                            <h3>Crypto: $${cryptoTotal}</h3>
+                            <h3>Stocks: $${stocksTotal}</h3>
                         </div>
                     </div>
                     <div>
@@ -174,7 +174,7 @@
                 <div class="mx-5 spend-container">
                     <p class="expense-h4">You have --- left to spend this month.</p>
                 </div>
-                <div class="mx-5 saving-container">
+                <div class="mx-5 saving-container overflow-auto">
                     <table class="table table-hover budgetTable">
                         <tr>
                             <th class="budget-th">Expenses</th>
