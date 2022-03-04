@@ -30,12 +30,12 @@
 </head>
 
 
-<body>
+<body class="bg-dark">
     <div class="navbar logo">
         <img src="/images/peppermint.png" alt="logo" class="w-25">
     </div>
     <div class="container d-flex">
-        <div class="accounts-container rounded-3 box-shadow">
+        <div class="accounts-container rounded-3 box-shadow border-dark">
             <div class="accounts">
                 <div class="d-flex justify-content-center align-items-center month-container">
                     <div>
@@ -52,25 +52,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="accounts-tabs4 rounded-3 border">
+                <div class="accounts-tabs4 rounded-3 border-dark box-shadow">
                     <h3 class="total-h3">Monthly Income: $${monthlyTotal}</h3>
                 </div>
-                <div class="accounts-tabs rounded-3 border">
+                <div class="accounts-tabs rounded-3 border-dark">
                     <h3 class="savings-h3">Savings: $${savingsTotal}
                     </h3>
                 </div>
-                <div class="accounts-tabs2 rounded-3 border">
+                <div class="accounts-tabs2 rounded-3 border-dark">
                     <h3 class="investments-h3">Investments:
                         $${investmentTotal}</h3>
                 </div>
-                <div class="accounts-tabs3 rounded-3 border">
+                <div class="accounts-tabs3 rounded-3 border-dark">
                     <h3 class="utilities-h3">Utilities: $${utilitiesTotal}</h3>
                 </div>
             </div>
         </div>
         <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
         <div class="gi-container">
-            <div class="goals rounded-3 box-shadow">
+            <div class="goals rounded-3 box-shadow border-dark">
                 <div class="d-flex justify-content-center">
                     <h1 class="dash-h1 col-sm-6 col-md-8 goal-h1">Goals</h1>
                     <a href="/goals/new/" class="col-6 col-md-4">
@@ -100,7 +100,7 @@
                 </div>
             </div>
             <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-            <div class="investments rounded-3 box-shadow">
+            <div class="investments rounded-3 box-shadow border-dark">
                 <div class="d-flex justify-content-center">
                     <h1 class="dash-h1 invest-h1">Investments</h1>
                     <a href="/investments/new">
@@ -163,7 +163,7 @@
     </div>
     <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <div class="container">
-        <div class="budget-container rounded-3 box-shadow">
+        <div class="budget-container rounded-3 box-shadow border-dark">
             <div class="d-flex justify-content-center">
                 <h1 class="dash-h1 budget-h1">Savings & Expenses</h1>
                 <a href="/budgets/new">

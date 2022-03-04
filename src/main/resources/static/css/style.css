@@ -73,7 +73,7 @@
 }
 
 .accounts-container{
-    background-color: #3c3c3c;
+    background-color: slategray;
     flex:3;
     height: 700px;
     display: flex;
@@ -88,7 +88,7 @@
 .budget-container{
     height:350px;
     margin: 50px 0px;
-    background-color: #3c3c3c;
+    background-color: slategray
 }
 
 .goals{
@@ -250,8 +250,11 @@
 }
 
 .box-shadow{
+    box-shadow: 3px 3px 7px #888888;
+}
+
+.border-dark{
     border: 2px solid black;
-    box-shadow: 10px 10px 20px #888888;
 }
 
 /* Dropdown */
