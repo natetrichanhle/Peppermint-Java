@@ -5,11 +5,11 @@ body{
 	font-weight: 300;
 	font-size: 15px;
 	line-height: 1.7;
-	color: #c4c3ca;
+	color: black;
 	background-color: #1f2029;
 	overflow-x: hidden;
 }
-a {
+/* a {
 	cursor: pointer;
   transition: all 200ms linear;
 }
@@ -20,8 +20,8 @@ a:hover {
   color: #c4c3ca;
 }
 .link:hover {
-  color: #ffeba7;
-}
+  color: #3c3c3c;
+} */
 p {
   font-weight: 500;
   font-size: 14px;
@@ -39,6 +39,7 @@ h6 span{
   position: relative;
   width: 100%;
   display: block;
+  
 }
 .full-height{
   min-height: 100vh;
@@ -59,7 +60,7 @@ h6 span{
     padding: 0;
     margin: 10px auto;
     cursor: pointer;
-    background-color: #ffeba7;
+    background-color: #3c3c3c;
 }
 .checkbox:checked + label:before,
 .checkbox:not(:checked) + label:before{
@@ -68,8 +69,8 @@ h6 span{
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    color: #ffeba7;
-    background-color: #102770;
+    color: #3c3c3c;
+    background-color: #9e1a2c;
     font-family: 'unicons';
     content: '\eb4f';
     z-index: 20;
@@ -89,7 +90,7 @@ h6 span{
     position: relative;
     width: 440px;
     max-width: 100%;
-    height: 400px;
+    height: 650px;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     perspective: 800px;
@@ -109,7 +110,7 @@ h6 span{
     width: 100%;
     height: 100%;
     background-color: #2a2b38;
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+    background-image: url("/images/peppermints.jpeg");
     background-position: bottom center;
     background-repeat: no-repeat;
     background-size: 300%;
@@ -180,7 +181,7 @@ h6 span{
     font-size: 24px;
     line-height: 48px;
     text-align: left;
-    color: #ffeba7;
+    color: #3c3c3c;
     -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
 }
@@ -254,19 +255,20 @@ h6 span{
     -ms-flex-pack: center;
     text-align: center;
     border: none;
-    background-color: #ffeba7;
-    color: #102770;
+    background-color: #3c3c3c;
+    color: #9e1a2c;
     box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
+    margin-top: 10px;
 }
 .btn:active,
 .btn:focus{  
-    background-color: #102770;
-    color: #ffeba7;
+    background-color: #9e1a2c;
+    color: #3c3c3c;
     box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
 .btn:hover{  
-    background-color: #102770;
-    color: #ffeba7;
+    background-color: #9e1a2c;
+    color: #3c3c3c;
     box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
 .logo {
