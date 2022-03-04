@@ -87,7 +87,7 @@
                                 <td>
                                     <form action="/goals/${goal.id}" method="post">
                                         <input type="hidden" name="_method" value="delete">
-                                        <input type="submit" value="Delete"
+                                        <input type="submit" value="Complete"
                                             class="btn goal-deletebtn">
                                     </form>
                                 </td>
@@ -109,9 +109,9 @@
                     <!-- render some shit here for investments -->
                     <div class="d-flex align-items-center">
                         <div>
-                            <h3>Roth Ira:</h3>
-                            <h3>Crypto:</h3>
-                            <h3>Stocks:</h3>
+                            <h3>Roth Ira: $${rothIraTotal}</h3>
+                            <h3>Crypto: $${cryptoTotal}</h3>
+                            <h3>Stocks: $${stocksTotal}</h3>
                         </div>
                     </div>
                     <div>

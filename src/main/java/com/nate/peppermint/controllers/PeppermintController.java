@@ -86,6 +86,15 @@ public class PeppermintController {
             - month.getInvestment().getTotalInvestments());
             int roundedUtilitiesTotal = (int) utilitiesTotal;
             model.addAttribute("utilitiesTotal", roundedUtilitiesTotal);
+            double rothIraTotal = (double) (month.getInvestment().getTotalInvestments() * month.getInvestment().getRothIraAmount()) / 100 ;
+            int roundedRothIraTotal = (int) rothIraTotal;
+            model.addAttribute("rothIraTotal", roundedRothIraTotal);
+            double cryptoTotal = (double) (month.getInvestment().getTotalInvestments() * month.getInvestment().getCryptoAmount()) / 100 ;
+            int roundedCryptoTotal = (int) cryptoTotal;
+            model.addAttribute("cryptoTotal", roundedCryptoTotal);
+            double stocksTotal = (double) (month.getInvestment().getTotalInvestments() * month.getInvestment().getStocksAmount()) / 100 ;
+            int roundedStocksTotal = (int) stocksTotal;
+            model.addAttribute("stocksTotal", roundedStocksTotal);
             return "dashboard.jsp";
         }
     }
