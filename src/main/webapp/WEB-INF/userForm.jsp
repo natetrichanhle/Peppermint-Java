@@ -26,7 +26,7 @@
     
     <div class="section">
         <div class="container">
-                <img src="/images/peppermint.png" alt="logo" class="w-50">
+            <div class="d-flex justify-content-center"><img src="/images/peppermint.png" alt="logo" class="w-50"></div>
             <div class="row justify-content-center">
                 <div class="col-12 text-center align-self-center">
                     <div class="section pb-5 pt-sm-2 text-center">
